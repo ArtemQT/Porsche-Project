@@ -1,0 +1,274 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../../public/assetsAuth/fonts/Poppins-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../../public/assetsAuth/fonts/Poppins-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Poppins',sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    max-width: 1920px;
+
+    overflow: hidden ;
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 50px;
+    border-radius: 15px;
+    transition-duration: 0.7s;
+}
+
+input:focus{
+    background-color: silver;
+    color: #000;
+}
+
+label{
+    color: #666;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+/*----------------------------------------------*/
+.wrapper{
+    max-width: 1920px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.wrapper__login{
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper__login-navigation{
+    display: flex;
+    justify-content: space-between;
+
+    padding-block: 25px;
+    border-bottom: 2px solid gray;
+    background-color: #F6F6F6;
+
+}
+
+.login__porsche-logo-link{
+    padding-left: 180px;
+}
+
+/*----------------------------------------------*/
+.wrapper__login-authorization{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-bottom: 2px solid gray;
+}
+
+.login__form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 40px;
+}
+
+.wrapper__title{
+
+    margin-top: 60px;
+
+    color: #333;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.wrapper__paragraph{
+    color: #666;
+    font-weight: 400;
+}
+
+.form__submit-btn{
+
+    color: #FFF;
+    font-size: 20px;
+
+    border-radius: 32px;
+    background: #111;
+    opacity: 0.25;
+
+    padding: 15px 140px;
+    margin-bottom: 20px;
+
+    transition-duration: 0.4s;
+}
+
+.form__submit-btn:hover{
+    background-color: #000;
+    color: #FFF;
+    opacity: 1;
+}
+
+.form__input-checkbox{
+    align-self: start;
+
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.input__real-checkbox{
+    width: 0;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+}
+
+.input__custom-checkbox{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    vertical-align: sub;
+
+    border: 2px solid #e3d9d9;;
+    border-radius: 4px;
+
+    background-color: #e3d9d9;
+
+    position: relative;
+    z-index: -1;
+}
+
+.input__custom-checkbox::before{
+    content: '';
+
+    display: inline-block;
+    width: 15px;
+    aspect-ratio: 1;
+
+    background: url("../../../public/assetsAuth/icons/chek-mark.svg") center/cover no-repeat;
+
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+
+    transition: 0.2s ease-in;
+}
+
+.input__real-checkbox:checked + .input__custom-checkbox::before{
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.input__real-checkbox:focus + .input__custom-checkbox{
+    box-shadow: 0 0 1px #434141, 0 0 10px #000000;
+}
+/*----------------------------------------------*/
+
+.wrapper__create-account{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
+
+    /*background-color: #F6F6F6;*/
+    padding-block: 80px;
+}
+
+.wrapper__create-account__paragraph{
+    color: #333;
+    font-size: 20px;
+}
+
+.create-account-link{
+    color: #FFF;
+    font-size: 20px;
+
+    border-radius: 32px;
+    background: #111;
+    opacity: 0.25;
+
+    padding: 15px 75px;
+
+    transition-duration: 0.4s;
+}
+
+.create-account-link:hover{
+    background-color: #000;
+    color: #FFF;
+    opacity: 1;
+}
+/*----------------------------------------------*/
+
+.message{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    background-color: lightgray;
+    color: #000;
+
+    text-align: center;
+
+    padding: 10px 10px;
+    border: 1px solid gray;
+    border-radius: 20px;
+    margin-bottom: 10px;
+
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+}
+
+.message__text{
+    width: 250px;
+    font-size: 16px;
+}
+
+.hidden{
+    display: none;
+}
+
+.message__close-button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 10px;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #111111;
+    color: #fff;
+
+    border: 1px solid #111111;
+    border-radius: 15px;
+
+    transition-duration: 0.4s;
+}
+
+.message__close-button:hover{
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+
+

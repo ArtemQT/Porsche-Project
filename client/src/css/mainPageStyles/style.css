@@ -1,0 +1,551 @@
+
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('../../../public/assetsMainPage/fonts/Manrope-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('../../../public/assetsMainPage/fonts/Manrope-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../../../public/assetsMainPage/fonts/Montserrat-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../../../public/assetsMainPage/fonts/Montserrat-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    src: url('../../../public/assetsMainPage/fonts/Orbitron-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    src: url('../../../public/assetsMainPage/fonts/Orbitron-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/*--------------------------------------------*/
+/*                 Общие стили                */
+/*--------------------------------------------*/
+
+.visually-hidden{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+body{
+    max-width: 1920px;
+    min-width: 100vw;
+
+    color: #000000;
+    background-color: #FFFFFF;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container{
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.h2-title{
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 35px;
+    text-transform: uppercase;
+    color: #000;
+    letter-spacing: 1.5px;
+    position: relative;
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(150px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradientShift {
+    0% { background-position: left }
+    100% { background-position: right; }
+}
+
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+/*             Стили для HEADER               */
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+
+.header{
+
+    max-width: 1920px;
+    border-bottom: 1px solid #898C94;
+    height: 80px;
+}
+
+.header__container{
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /*padding-block: 20px;*/
+}
+
+.header__main-logo{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.header__wrapper-actions{
+    display: flex;
+    align-items: center;
+    column-gap: 100px;
+}
+
+.header__nav-list{
+    display: flex;
+    column-gap: 40px;
+}
+
+.header__list-icons{
+    display: flex;
+    column-gap: 50px;
+}
+/*--------------------------------------------*/
+
+.header__burger-button{
+    width: 40px;
+    height: 40px;
+
+    background-color: transparent;
+    border: 2px #898C94 solid;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: background-color 0.4s;
+}
+
+.header__burger-button:hover{
+    background-color: #898C94;
+}
+
+.header__user-button, .header__basket-button{
+    width: 40px;
+    aspect-ratio: 1;
+
+    background-color: #E7E8EA;
+    border-radius: 50%;
+    border: 1px solid #898C94;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: background-color 0.4s;
+    z-index: 1;
+}
+.header__user-button:hover, .header__basket-button:hover{
+    background-color: #FFFFFF;
+}
+
+.header__nav-link{
+
+    height: 80px;
+    display: inline-flex;
+    align-items: center;
+
+    position: relative;
+}
+
+.header__nav-link:after{
+    content: '';
+
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+    display: block;
+
+    background: linear-gradient(90deg, #d40000, #d40000);
+
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.header__nav-link:hover:after{
+    transform: scaleX(1);
+}
+
+
+/*--------------------------------------------*/
+
+.header__list-icons-item:first-child {
+    position: relative;
+}
+
+.header__dropdown-menu{
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+
+    position: absolute;
+    left: -75%;
+    top: 120%;
+    min-width: 100px;
+
+    border: 1px solid #898C94;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    background-color: #fff;
+}
+
+.header__dropdown-menu-list{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__dropdown-menu-item{
+    width: 100%;
+}
+
+.header__dropdown-menu-button{
+    background-color: #FFFFFF;
+
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px solid #898C94;
+    padding: 5px 10px;
+    text-align: center;
+    transition-duration: 0.3s;
+
+    cursor: pointer;
+}
+
+.header__dropdown-menu-button:hover{
+    background-color: #898C94;
+}
+
+.visible{
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+/*       Стили для INTRO-CAR SECTION          */
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+
+.introCars{
+    background-color: #f5f5f5  ;
+    border-bottom: 1px solid #898C94;
+}
+
+.introCars__container{
+    height: 700px;
+
+    display: grid;
+    grid-template-columns: 3fr 5fr;
+}
+
+.introCars__container-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-right: 1px #898C94 solid;
+}
+/*--------------------------------------------*/
+
+.introCars__container-title{
+    background: linear-gradient(90deg, #000, #3a3a3a 45%, #fff 50%, #3a3a3a 55%, #000);
+    background-size: 200% auto;
+    animation:
+            gradientShift 2s ease-in infinite alternate,
+            fadeIn 1.5s ease forwards 0.5s;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    margin-bottom: 40px;
+}
+
+.introCars__container-paragraph {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 1.6;
+    color: #2e2e2e;
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: none;
+
+    animation: fadeIn 2s ease forwards 0.5s;
+    margin-bottom: 40px;
+
+}
+
+.introCars__container-button{
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    background-color: #FAFAFA;
+
+    border: 3px solid #898C94;
+    padding-inline: 15px;
+    border-radius: 30px;
+    animation: fadeIn 2s ease forwards 0.5s;
+
+    transition: all 0.4s ease;
+
+    cursor: pointer;
+
+    margin-bottom: 30px;
+}
+
+.introCars__container-button::after {
+    content: '';
+
+    position: relative;
+    right: -10px;
+
+    display: inline-flex;
+    align-items: center;
+    width: 100px;
+    height: 80px;
+
+    background: url("../../../public/assetsMainPage/icons/Porshe-icon-model.svg") center/cover no-repeat ;
+
+    transition: all 0.5s ease;
+}
+
+.introCars__container-button:hover{
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.introCars__container-button:hover::after{
+    transform: translateX(50px);
+}
+
+.introCars__quote-wrapper{
+    position: relative;
+    padding-block: 20px;
+    text-align: center;
+
+    background: linear-gradient(90deg, #000, #3a3a3a 45%, #fff 50%, #3a3a3a 55%, #000);
+
+    background-size: 200% auto;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation:
+            gradientShift 2s ease-in infinite alternate,
+            fadeIn 2s ease forwards 0.5s;
+
+    transition: all 0.5s ease;
+}
+.introCars__quote-wrapper::before,
+.introCars__quote-wrapper::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg,
+    transparent 0%,
+    #333 20%,
+    #ff0000 50%,
+    #333 80%,
+    transparent 100%);
+    opacity: 0.7;
+    transition: all 0.3s ease-in-out;
+}
+
+.introCars__quote-wrapper::before {
+    top: 0;
+    transform: scaleX(0.8);
+}
+
+.introCars__quote-wrapper::after {
+    bottom: 0;
+    transform: scaleX(0.6);
+}
+
+.introCars__quote-wrapper:hover::before,
+.introCars__quote-wrapper:hover::after {
+    height: 2px;
+    background: linear-gradient(90deg,
+    transparent 0%,
+    #ff0000 20%,
+    #fff 50%,
+    #ff0000 80%,
+    transparent 100%);
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.founder-quote__text{
+    font-family: 'Manrope', sans-serif ;
+    font-size: 18px;
+    font-weight: 300;
+
+    font-style: italic;
+    line-height: 1.5;
+    letter-spacing: 0.3px;
+    padding-left: 20px;
+}
+
+/*--------------------------------------------*/
+.introCars__container-car{
+    min-width: 0;
+}
+
+.introCars__container-car__caption{
+    width: 700px;
+    margin-top: 25px;
+
+
+    background: linear-gradient(90deg, #000, #3a3a3a 45%, #ff0000 50%, #3a3a3a 55%, #000);
+    background-size: 200% auto;
+
+    animation:
+            gradientShift 2s ease-in infinite alternate,
+            fadeIn 2s ease forwards 0.5s;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.introCars__swiper-container{
+    animation: fadeIn 2s ease forwards 0.5s ;
+}
+
+.introCars__container-car{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*---------------Cтили слайдера------------------*/
+
+.swiper{
+    max-width: 100%;
+    max-height: 400px;
+    margin-inline: auto;
+
+    margin-bottom: 60px;
+}
+
+.swiper-wrapper{
+}
+
+.swiper-slide{
+
+}
+.introCars__swiper-slide-picture{
+
+}
+
+/*------------Список характеристик в INTRO------------------*/
+
+.introCars__car__specs{
+
+    display: flex;
+    column-gap: 100px;
+
+    animation: fadeIn 2s ease forwards 0.5s;
+}
+
+.car__specs-item-value{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 54px;
+    letter-spacing: 1px;
+}
+
+.car__specs-value-span{
+    margin-left: 5px;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.car__specs-item-key{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    opacity: 0.5;
+}
+
+
+
+
+
+

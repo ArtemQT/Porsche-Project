@@ -1,0 +1,47 @@
+@import "./styleAuthorization.css";
+
+.login__form{
+    row-gap: 10px;
+}
+
+.form__input-userInitials{
+    display: flex;
+    justify-content: space-between;
+    column-gap: 20px;
+}
+
+.input__name, .input__surname{
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+}
+.form__input-surName, .form__input-userName{
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper__title{
+    margin-top: 10px;
+}
+
+.form__submit-btn{
+    margin-bottom: 20px;
+}
+
+.form__input-confirmPassword{
+    margin-bottom: 20px;
+}
+
+.wrapper__create-account{
+    padding-block: 35px;
+}
+
+.create-account-link{
+    padding-inline: 140px;
+}
+
+.form__input-password label{
+    display: flex;
+    justify-content: space-between;
+}
+

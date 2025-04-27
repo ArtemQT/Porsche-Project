@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="../src/css/reset.css">
+    <link rel="stylesheet" href="../src/css/mainPageStyles/style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <title>Porsche</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__container container">
+            <button class="header__burger-button">
+                <img src="assetsMainPage/icons/burger-btn.svg"
+                     alt=""
+                     title="Боковое меню"
+                     class="header__burger-img"
+                     loading="lazy"
+                     width="30"
+                     height="15"
+                >
+            </button>
+            <a href="index.html" class="header__main-logo" title="Porsche" aria-label="Porsche">
+                <img src="assetsMainPage/icons/Porsche-logo.svg"
+                     alt="Логотип Porsche"
+                     class="header__logo-img"
+                     loading="lazy"
+                     width="160"
+                     height="10"
+                >
+            </a>
+
+            <div class="header__wrapper-actions">
+                <nav class="header__nav">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item">
+                            <a href="#" class="header__nav-link">Models</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="#" class="header__nav-link">About</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="#" class="header__nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+                <ul class="header__list-icons">
+                    <li class="header__list-icons-item">
+                        <button class="header__user-button" title="Пользователь">
+                            <img src="assetsMainPage/icons/user-profile-logo.svg"
+                                 loading="lazy"
+                                 width="20"
+                                 height="20"
+                                 alt=""
+                            >
+                        </button>
+
+                        <div class="header__dropdown-menu">
+                        </div>
+                    </li>
+                    <li class="header__list-icons-item">
+                        <button class="header__basket-button" title="Корзина">
+                            <img src="assetsMainPage/icons/basket.svg"
+                                 alt=""
+                                 loading="lazy"
+                                 width="25"
+                                 height="25"
+                            >
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="main">
+        <h1 class="visually-hidden">Porsche cite</h1>
+        <section class="introCars">
+            <div class="introCars__container">
+                <div class="introCars__container-text">
+                    <h2 class="introCars__container-title h2-title">
+                        Porsche is made</br>
+                        for those who live,</br>
+                        not just exist
+                    </h2>
+                    <p class="introCars__container-paragraph">
+                        No compromises. No half measures.</br>
+                        Just the perfect symbiosis of power and elegance,</br>
+                        waiting to ignite your next adventure.
+                    </p>
+                    <a class="introCars__container-button">
+                        Configure Your Porsche
+                    </a>
+                    <div class="introCars__quote-wrapper">
+                        <q class="founder-quote__text">
+                            <em>I couldn’t find the perfect car, so I built it myself.</em>
+                        </q>
+                        <span class="founder-quote__author">— Ferry Porsche, <span class="founder-quote__year">1948</span></span>
+                    </div>
+                </div>
+
+                <div class="introCars__container-car">
+                    <div class="introCars__container-car__caption h2-title">
+                        The porsche gt3 rs: </br>
+                        our ultimate race machine
+                    </div>
+
+                    <div class="introCars__swiper-container swiper">
+                        <div class="introCars__swiper-wrapper swiper-wrapper">
+                            <div class="introCars__swiper-slide swiper-slide" style="width: 700px">
+                                <div class="introCars__swiper-slide-picture">
+                                    <img src="assetsMainPage/introCars-models/porsche-gt3-rs(1).jfif" alt="">
+                                </div>
+                            </div>
+                            <div class="introCars__swiper-slide swiper-slide">
+                                <div class="introCars__swiper-slide-picture">
+                                    <img src="assetsMainPage/introCars-models/porsche-gt3-rs(2).jfif" alt="">
+                                </div>
+                            </div>
+                            <div class="introCars__swiper-slide swiper-slide">
+                                <div class="introCars__swiper-slide-picture">
+                                    <img src="assetsMainPage/introCars-models/porsche-gt3-rs(3).jfif" alt="">
+                                </div>
+                            </div>
+                            <div class="introCars__swiper-slide swiper-slide">
+                                <div class="introCars__swiper-slide-picture">
+                                    <img src="assetsMainPage/introCars-models/porsche-gt3-rs(4).jfif" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul class="introCars__car__specs">
+                        <li class="introCars__car__specs-item">
+                            <div class="car__specs-item-value">
+                                <span data-js-GT3RS-Acceleration>0</span><span class="car__specs-value-span">s</span>
+                            </div>
+                            <div class="car__specs-item-key">
+                                Acceleration 0 - 100 km/h
+                            </div>
+                        </li>
+                        <li class="introCars__container-car__specs-item">
+                            <div class="car__specs-item-value">
+                                <span data-js-GT3RS-Power>0</span><span class="car__specs-value-span">kW / </span><span data-js-GT3RS-HorsePower>0</span><span class="car__specs-value-span">PS</span>
+                            </div>
+                            <div class="car__specs-item-key">
+                                Power (kW)/Power (PS)
+                            </div>
+                        </li>
+                        <li class="introCars__container-car__specs-item">
+                            <div class="car__specs-item-value">
+                                <span data-js-GT3RS-TopSpeed>0</span><span class="car__specs-value-span">km/h</span>
+                            </div>
+                            <div class="car__specs-item-key">
+                                Top speed
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+
+    </footer>
+
+    <script type="module" src="../src/js/modules/mainPageModule.js"></script>
+    <script type="module" src="../src/js/modules/sliderModules/sliderIntro.js"></script>
+    <script type="module" src="../src/js/modules/animateCountersModule/animateCountersModule.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</body>
+</html>
