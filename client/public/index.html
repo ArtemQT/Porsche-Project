@@ -82,20 +82,21 @@
 
     <main class="main">
         <h1 class="visually-hidden">Porsche cite</h1>
+
         <section class="introCars">
             <div class="introCars__container">
                 <div class="introCars__container-text">
                     <h2 class="introCars__container-title h2-title">
-                        Porsche is made</br>
-                        for those who live,</br>
+                        Porsche is made<br/>
+                        for those who live,<br/>
                         not just exist
                     </h2>
-                    <p class="introCars__container-paragraph">
-                        No compromises. No half measures.</br>
-                        Just the perfect symbiosis of power and elegance,</br>
+                    <p class="introCars__container-paragraph intro-description">
+                        No compromises. No half measures.<br/>
+                        Just the perfect symbiosis of power and elegance,<br/>
                         waiting to ignite your next adventure.
                     </p>
-                    <a class="introCars__container-button">
+                    <a class="introCars__container-button link-toConfigure">
                         Configure Your Porsche
                     </a>
                     <div class="introCars__quote-wrapper">
@@ -108,7 +109,7 @@
 
                 <div class="introCars__container-car">
                     <div class="introCars__container-car__caption h2-title">
-                        The porsche gt3 rs: </br>
+                        The porsche gt3 rs: <br/>
                         our ultimate race machine
                     </div>
 
@@ -163,7 +164,81 @@
                             </div>
                         </li>
                     </ul>
+
+                    <div class="introCars__car__sound-wrapper">
+                        <p class="introCars__car__sound-description intro-description">
+                            Sets the tempo at 9,000 rpm.<br/>
+                            Atmospheric engine delivers a clean sound
+                        </p>
+
+                        <div class="introCars__container-car-audio-player hidden">
+                        </div>
+
+                        <button class="introCars__container-car-audio-button">
+                            <img src="assetsMainPage/icons/icon-play.png"
+                                 alt=""
+                                 width="30"
+                                 height="30"
+                            >
+                            Hold down to listen to the sound
+                        </button>
+                    </div>
+
+                    <a class="introCars__car-order-button link-toConfigure">
+                    Configure Your GT-3 RS
+                </a>
                 </div>
+            </div>
+        </section>
+
+        <section class="modelRow">
+            <div class="modelRow__container container">
+                <h2 class="modelRow__title">
+                    Model row
+                </h2>
+                <ul class="modelRow__list">
+                    <li class="modelRow__list-item">
+                        <div class="modelRow__list-item-container">
+                            <div class="modelRow__list-item-icon">
+                                <img src="assetsMainPage/icons/911-icon.svg"
+                                     alt=""
+                                     width="100"
+                                     height="40"
+                                >
+                            </div>
+                            <div class="modelRow__list-item__fuelType">
+                                Gasoline
+                            </div>
+                            <p class="modelRow__list-item-description">
+                                Sports car icon with rear-mounted engine and maximum performance
+                            </p>
+                            <a href="" class="modelRow__list-item-button">
+                                All 911 models
+                            </a>
+                        </div>
+                    </li>
+                    <li class="modelRow__list-item">
+                        <div class="modelRow__list-item-container">
+                            <div class="modelRow__list-item-icon">
+                                <img src="assetsMainPage/icons/718-icon.svg"
+                                     alt=""
+                                     width="100"
+                                     height="40"
+                                >
+                            </div>
+                            <div class="modelRow__list-item__fuelType">
+                                Gasoline
+                            </div>
+
+                            <p class="modelRow__list-item-description">
+                                Two-seater with powerful dynamics thanks to the central engine location
+                            </p>
+                            <a href="" class="modelRow__list-item-button">
+                                All 718 models
+                            </a>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </section>
     </main>
@@ -174,8 +249,10 @@
 
     <script type="module" src="../src/js/modules/mainPageModule.js"></script>
     <script type="module" src="../src/js/modules/sliderModules/sliderIntro.js"></script>
-    <script type="module" src="../src/js/modules/animateCountersModule/animateCountersModule.js"></script>
+    <script type="module" src="../src/js/modules/animateCountersModules/animateCountersModule.js"></script>
+    <script type="module" src="../src/js/modules/audioRoadModules/audioRoadModule.js"></script>
 
+    <script src="https://unpkg.com/wavesurfer.js@7"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 </html>
