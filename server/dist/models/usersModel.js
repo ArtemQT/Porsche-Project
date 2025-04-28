@@ -45,6 +45,9 @@ class UsersModel {
         catch (err) {
             throw err;
         }
+        finally {
+            await connection.end();
+        }
     }
 }
 exports.UsersModel = UsersModel;

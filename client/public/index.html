@@ -10,11 +10,12 @@
     <link rel="stylesheet" href="../src/css/mainPageStyles/style.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="icon" href="favicon/porsche.svg" type="image/x-icon">
 
     <title>Porsche</title>
 </head>
 <body>
-    <header class="header">
+    <header id="header" class="header">
         <div class="header__container container">
             <button class="header__burger-button">
                 <img src="assetsMainPage/icons/burger-btn.svg"
@@ -26,7 +27,7 @@
                      height="15"
                 >
             </button>
-            <a href="index.html" class="header__main-logo" title="Porsche" aria-label="Porsche">
+            <a href="index.html" class="header__main-logo" title="Porsche">
                 <img src="assetsMainPage/icons/Porsche-logo.svg"
                      alt="Логотип Porsche"
                      class="header__logo-img"
@@ -40,13 +41,13 @@
                 <nav class="header__nav">
                     <ul class="header__nav-list">
                         <li class="header__nav-item">
-                            <a href="#" class="header__nav-link">Models</a>
+                            <a href="#models" class="header__nav-link">Models</a>
                         </li>
                         <li class="header__nav-item">
-                            <a href="#" class="header__nav-link">About</a>
+                            <a href="#Porsche_Finder" class="header__nav-link">Porsche Finder</a>
                         </li>
                         <li class="header__nav-item">
-                            <a href="#" class="header__nav-link">Contact</a>
+                            <a href="#footer" class="header__nav-link">Contact</a>
                         </li>
                     </ul>
                 </nav>
@@ -196,7 +197,7 @@
                 <h2 class="modelRow__title">
                     Model row
                 </h2>
-                <ul class="modelRow__list">
+                <ul class="modelRow__list" id="models">
                     <li class="modelRow__list-item">
                         <div class="modelRow__list-item-container">
                             <div class="modelRow__list-item-icon">
@@ -207,12 +208,12 @@
                                 >
                             </div>
                             <div class="modelRow__list-item__fuelType">
-                                Gasoline
+                                Petrol
                             </div>
                             <p class="modelRow__list-item-description">
                                 Sports car icon with rear-mounted engine and maximum performance
                             </p>
-                            <a href="" class="modelRow__list-item-button">
+                            <a href="ModelOverview.html" class="modelRow__list-item-button">
                                 All 911 models
                             </a>
                         </div>
@@ -227,7 +228,7 @@
                                 >
                             </div>
                             <div class="modelRow__list-item__fuelType">
-                                Gasoline
+                                Petrol
                             </div>
 
                             <p class="modelRow__list-item-description">
@@ -241,10 +242,178 @@
                 </ul>
             </div>
         </section>
+
+        <section class="findCar">
+            <div class="findCar__container container" id="Porsche_Finder">
+                <div class="findCar__container-image">
+                    <img src="assetsMainPage/images/find-car-section-img.avif" alt=""
+                         loading="lazy"
+                    >
+                </div>
+                <div class="findCar__container-info">
+                    <h2 class="findCar__title">
+                        Find your new or pre-owned Porsche.
+                    </h2>
+                    <p class="findCar__description">
+                        A Porsche is as individual as its owner. It is always
+                        an expression of its own personality. We can help you
+                        find the car of your dreams at authorized Porsche centers.
+                    </p>
+                    <a href="https://finder.porsche.com/lt/en-LT" class="findCar__button" target="_blank">
+                        Find your new Porsche
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="contacts">
+
+        </section>
     </main>
 
-    <footer class="footer">
+    <footer id="footer" class="footer">
+        <div class="contacts__container container">
+            <h2 class="visually-hidden">Contacts information</h2>
 
+            <div  class="contacts__wrapper">
+                <div class="contacts__findInfo-wrapper">
+                    <h3 class="contacts__findInfo-title contacts-title">
+                        Divisions and contact information
+                    </h3>
+                    <p class="contacts__findInfo-description">
+                        Do you have any questions?
+                    </p>
+                    <a href="https://www.porsche.com/central-eastern-europe/ru/locations-and-contact/" class="contacts__findInfo-link" target="_blank">
+                        Find contacts
+                    </a>
+                </div>
+
+                <div class="contacts__social-media-wrapper">
+                    <h3 class="contacts__social-media-title contacts-title">
+                        Social media
+                    </h3>
+                    <p class="contacts__social-media-description">
+                        Connect with us through social media.
+                    </p>
+                    <ul class="contacts__social-media-list">
+                        <li class="contacts__social-media-list-item">
+                            <a href="https://www.instagram.com/porsche/" class="contacts__social-media-list-link" target="_blank">
+                                <img src="assetsMainPage/icons/social-media-icons/icon-instagram.svg"
+                                     alt=""
+                                     width="40"
+                                     height="40"
+                                >
+                            </a>
+                        </li>
+                        <li class="contacts__social-media-list-item">
+                            <a href="https://www.facebook.com/porsche/" class="contacts__social-media-list-link" target="_blank">
+                                <img src="assetsMainPage/icons/social-media-icons/icon-facebook.svg"
+                                     alt=""
+                                     width="40"
+                                     height="40"
+                                >
+                            </a>
+                        </li>
+                        <li class="contacts__social-media-list-item">
+                            <a href="https://www.pinterest.com/porsche/" class="contacts__social-media-list-link" target="_blank">
+                                <img src="assetsMainPage/icons/social-media-icons/icon-pinterest.svg"
+                                     alt=""
+                                     width="40"
+                                     height="40"
+                                >
+                            </a>
+                        </li>
+                        <li class="contacts__social-media-list-item">
+                            <a href="https://www.youtube.com/user/Porsche" class="contacts__social-media-list-link" target="_blank">
+                                <img src="assetsMainPage/icons/social-media-icons/icon-youtube.svg"
+                                     alt=""
+                                     width="40"
+                                     height="40"
+                                >
+                            </a>
+                        </li>
+                        <li class="contacts__social-media-list-item">
+                            <a href="https://x.com/Porsche" class="contacts__social-media-list-link" target="_blank">
+                                <img src="assetsMainPage/icons/social-media-icons/icon-xcom.svg"
+                                     alt=""
+                                     width="60"
+                                     height="60"
+                                >
+                            </a>
+                        </li>
+                        <li class="contacts__social-media-list-item">
+                            <a href="https://www.linkedin.com/company/porsche-ag/" class="contacts__social-media-list-link" target="_blank">
+                                <img src="assetsMainPage/icons/social-media-icons/icon-linkedin.svg"
+                                     alt=""
+                                     width="30"
+                                     height="30"
+                                >
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="contacts__company-wrapper">
+                <h3 class="contacts__company-title contacts-title">
+                    Company
+                </h3>
+                <ul class="contacts__company-list">
+                    <li class="contacts__company-list-item">
+                        <a href="https://www.porsche.com/central-eastern-europe/ru/" class="contacts__company-list-link" target="_blank">
+                            Porsche Central and Eastern Europe
+                        </a>
+                        <a href="https://www.porsche.com/central-eastern-europe/ru/legal/compliance/" class="contacts__company-list-link" target="_blank">
+                            Compliance
+                        </a>
+                    </li>
+
+                    <li class="contacts__company-list-item">
+                        <a href="https://www.porsche.com/central-eastern-europe/ru/aboutporsche/jobs/" class="contacts__company-list-link" target="_blank">
+                            Vacancies
+                        </a>
+                        <a href="https://www.porsche.com/central-eastern-europe/ru/aboutporsche/responsibility/" class="contacts__company-list-link" target="_blank">
+                            Responsibility
+                        </a>
+                    </li>
+
+                    <li class="contacts__company-list-item">
+                        <a href="https://www.porsche.com/central-eastern-europe/ru/globalpartnershipcouncil" class="contacts__company-list-link" target="_blank">
+                            Global Partnership Council
+                        </a>
+                        <a href="https://www.porsche.com/central-eastern-europe/ru/legal/compliance/" class="contacts__company-list-link" target="_blank">
+                            News and press
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="contacts__company-rights-wrapper">
+                <p class="contacts__company-rights-description">
+                    © 2025 Porsche.com. All rights reserved.
+                </p>
+
+                <a href="#header" class="contacts__company-rights-logo">
+                    <img src="assetsMainPage/icons/porsche-white-logo.svg"
+                         alt="Логотип Porsche"
+                         class="header__logo-img"
+                         loading="lazy"
+                         width="160"
+                         height="10"
+                    >
+                </a>
+
+                <a href="#header" class="contacts__company-rights-upButton">
+                    <img src="assetsMainPage/icons/upButton.svg"
+                         alt=""
+                         class="header__logo-img"
+                         loading="lazy"
+                         width="20"
+                         height="20"
+                    >
+                </a>
+            </div>
+        </div>
     </footer>
 
     <script type="module" src="../src/js/modules/mainPageModule.js"></script>

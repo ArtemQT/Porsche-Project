@@ -48,6 +48,9 @@ export class UsersModel {
         catch(err: any){
             throw err;
         }
+        finally{
+            await connection.end();
+        }
     }
 }
 

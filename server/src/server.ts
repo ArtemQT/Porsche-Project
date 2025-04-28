@@ -3,10 +3,12 @@ import express from "express";
 import { usersRouter } from "./routers/usersRoutes"
 import { testRouter } from "./routers/testGelAllUsersRoute";
 import { refreshTokenRouter } from "./routers/refreshRoute"
+import { carModelsRouter } from "./routers/carModelRoute"
+
 import cookieParser from "cookie-parser";
 import { corsOptions } from "./config/corsOptions";
 import cors from "cors"
-
+//------------------------------------------------------------//
 const server = express();
 const PORT: number = +(process.env.PORT || 3000);
 
@@ -18,6 +20,7 @@ server.use(cookieParser())
 server.use('/API/auth', usersRouter)
 server.use('/API/users', testRouter)
 server.use('/API/refresh', refreshTokenRouter)
+server.use('/API/carModels', carModelsRouter)
 
 server.listen(PORT, () => {
     console.log(`server listening on port ${PORT}`);

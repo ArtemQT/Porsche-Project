@@ -1,4 +1,5 @@
-
+@import url('../footer.css');
+@import url('../header.css');
 
 @font-face {
     font-family: 'Manrope';
@@ -76,8 +77,6 @@ body{
     line-height: 1.6;
     letter-spacing: -0.01em;
     font-family: 'Montserrat', sans-serif;
-
-
 }
 
 .container{
@@ -169,184 +168,7 @@ a{
     transform: translateX(50px);
 }
 
-/*--------------------------------------------*/
-/*--------------------------------------------*/
-/*             Стили для HEADER               */
-/*--------------------------------------------*/
-/*--------------------------------------------*/
 
-.header{
-
-    max-width: 1920px;
-    border-bottom: 1px solid #898C94;
-    height: 80px;
-}
-
-.header__container{
-    position: relative;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    /*padding-block: 20px;*/
-}
-
-.header__main-logo{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.header__wrapper-actions{
-    display: flex;
-    align-items: center;
-    column-gap: 100px;
-}
-
-.header__nav-list{
-    display: flex;
-    column-gap: 40px;
-}
-
-.header__list-icons{
-    display: flex;
-    column-gap: 50px;
-}
-/*--------------------------------------------*/
-
-.header__burger-button{
-    width: 40px;
-    height: 40px;
-
-    background-color: transparent;
-    border: 2px #898C94 solid;
-    border-radius: 50%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    transition: background-color 0.4s;
-}
-
-.header__burger-button:hover{
-    background-color: #898C94;
-}
-
-.header__user-button, .header__basket-button{
-    width: 40px;
-    aspect-ratio: 1;
-
-    background-color: #E7E8EA;
-    border-radius: 50%;
-    border: 1px solid #898C94;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    transition: background-color 0.4s;
-    z-index: 1;
-}
-.header__user-button:hover, .header__basket-button:hover{
-    background-color: #FFFFFF;
-}
-
-.header__nav-link{
-
-    height: 80px;
-    display: inline-flex;
-    align-items: center;
-
-    position: relative;
-}
-
-.header__nav-link:after{
-    content: '';
-
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-
-    width: 100%;
-    height: 2px;
-    display: block;
-
-    background: linear-gradient(90deg, #d40000, #d40000);
-
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-}
-
-.header__nav-link:hover:after{
-    transform: scaleX(1);
-}
-
-
-/*--------------------------------------------*/
-
-.header__list-icons-item:first-child {
-    position: relative;
-}
-
-.header__dropdown-menu{
-    opacity: 0;
-    transform: translateY(-10px);
-    visibility: hidden;
-
-    position: absolute;
-    left: -75%;
-    top: 120%;
-    min-width: 100px;
-
-    border: 1px solid #898C94;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-    background-color: #fff;
-}
-
-.header__dropdown-menu-list{
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.header__dropdown-menu-item{
-    width: 100%;
-}
-
-.header__dropdown-menu-button{
-    background-color: #FFFFFF;
-
-    font-family: 'Manrope', sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-
-    display: inline-block;
-    width: 100%;
-    border-bottom: 1px solid #898C94;
-    padding: 5px 10px;
-    text-align: center;
-    transition-duration: 0.3s;
-
-    cursor: pointer;
-}
-
-.header__dropdown-menu-button:hover{
-    background-color: #898C94;
-}
-
-.visible{
-    opacity: 1;
-    transform: translateY(0);
-    visibility: visible;
-}
 
 /*--------------------------------------------*/
 /*--------------------------------------------*/
@@ -620,7 +442,7 @@ a{
     justify-content: center;
 
 
-    padding-block: 70px;
+    margin-block: 200px;
 
     opacity: 0;
     transform: translateY(150px);
@@ -749,9 +571,245 @@ a{
     background: #2e2e2e;
 }
 
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+/*        Стили для FIND CAR SECTION          */
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+
+.findCar__container{
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+
+    animation: fadeIn 1.5s ease forwards 0.5s;
+    opacity: 0;
+    transform: translateY(150px);
+
+    max-width: 1500px;
+
+    margin-inline: auto;
+    margin-bottom: 200px;
+    padding-inline: 0;
+
+    border-radius: 30px;
+    overflow: hidden;
+
+}
+
+.findCar__container{
+}
+
+.findCar__container-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 40px;
+
+    padding: 50px;
+    background-color: #000000;
 
 
+}
 
+.findCar__title{
+    font-family: 'Manrope', sans-serif;
+    font-size: 40px;
+    letter-spacing: 3px;
+    line-height: 1.4;
 
+    color: #FFFFFF;
+}
 
+.findCar__description{
+    font-family: 'Manrope', sans-serif;
+    font-size: 24px;
+    line-height: 1.5;
+    color: #FFFFFF;
+}
 
+.findCar__button{
+    align-self: flex-start;
+
+    font-family: 'Manrope', sans-serif;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #000000;
+
+    padding: 10px 30px;
+    background-color: #FFFFFF;
+
+    transition: 0.4s;
+}
+
+.findCar__button:hover{
+    opacity: 0.5;
+}
+
+.footer{
+    background-color: #000000;
+}
+
+.contacts__container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    color: #FFFFFF;
+    padding-block: 50px;
+
+    animation: fadeIn 1.5s ease forwards 0.5s;
+}
+
+.contacts-title{
+    font-family: 'Manrope', sans-serif;
+    font-size: 26px;
+    letter-spacing: 2px;
+}
+
+.contacts__findInfo-title{
+    width: 305px;
+    margin-bottom: 15px;
+}
+
+.contacts__findInfo-description{
+    margin-bottom: 30px;
+}
+
+.contacts__findInfo-link{
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+
+    width: 305px;
+    padding: 15px 40px;
+    display: inline-block;
+    text-align: center;
+
+    background-color: #FFFFFF;
+    color: #000000;
+
+    transition: 0.5s;
+}
+
+.contacts__findInfo-link:hover{
+    opacity: 0.5;
+}
+
+.contacts__wrapper{
+    width: 100%;
+    padding-bottom: 50px;
+
+    display: flex;
+    column-gap: 100px;
+
+    border-bottom: 1px solid #434141;
+}
+
+.contacts__social-media-title{
+    margin-bottom: 55px;
+}
+
+.contacts__social-media-list{
+    display: flex;
+    column-gap: 40px;
+}
+
+.contacts__social-media-list-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 75px;
+    height: 75px;
+    background-color: #FFFFFF;
+
+    border-radius: 10px;
+
+    transition: 0.5s;
+    cursor: pointer;
+}
+.contacts__social-media-list-item:hover{
+    opacity: 0.5;
+}
+
+.contacts__social-media-description{
+    margin-bottom: 20px;
+}
+
+/*--------------------------------------------*/
+
+.contacts__company-wrapper{
+    width: 100%;
+    padding-block: 50px;
+    border-bottom: 1px solid #434141;
+}
+
+.contacts__company-title{
+    margin-bottom: 20px;
+}
+
+.contacts__company-list{
+    display: flex;
+    column-gap: 100px;
+}
+
+.contacts__company-list-item{
+    display: inline-flex;
+    flex-direction: column;
+    row-gap: 15px;
+
+}
+
+.contacts__company-list-link{
+
+    color: #FFFFFF;
+    transition: 0.5s;
+    padding: 5px 5px 5px 0px;
+    width: fit-content;
+}
+
+.contacts__company-list-link:hover{
+    background-color: #333333;
+    border-radius: 2px;
+}
+
+/*--------------------------------------------*/
+
+.contacts__company-rights-wrapper{
+    width: 100%;
+    margin-top: 50px ;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+}
+
+.contacts__company-rights-logo{
+    display: inline-block;
+    width: 160px;
+    height: 10px;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.contacts__company-rights-upButton{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+
+    transition: 0.5s;
+}
+
+.contacts__company-rights-upButton:hover{
+    opacity: 0.5;
+}

@@ -1,0 +1,173 @@
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+/*        Стили для CONTACT SECTION           */
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+
+.footer{
+    background-color: #000000;
+}
+
+.contacts__container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    color: #FFFFFF;
+    padding-block: 50px;
+
+    animation: fadeIn 1.5s ease forwards 0.5s;
+}
+
+.contacts-title{
+    font-family: 'Manrope', sans-serif;
+    font-size: 26px;
+    letter-spacing: 2px;
+}
+
+.contacts__findInfo-title{
+    width: 305px;
+    margin-bottom: 15px;
+}
+
+.contacts__findInfo-description{
+    margin-bottom: 30px;
+}
+
+.contacts__findInfo-link{
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+
+    width: 305px;
+    padding: 15px 40px;
+    display: inline-block;
+    text-align: center;
+
+    background-color: #FFFFFF;
+    color: #000000;
+
+    transition: 0.5s;
+}
+
+.contacts__findInfo-link:hover{
+    opacity: 0.5;
+}
+
+.contacts__wrapper{
+    width: 100%;
+    padding-bottom: 50px;
+
+    display: flex;
+    column-gap: 100px;
+
+    border-bottom: 1px solid #434141;
+}
+
+.contacts__social-media-title{
+    margin-bottom: 55px;
+}
+
+.contacts__social-media-list{
+    display: flex;
+    column-gap: 40px;
+}
+
+.contacts__social-media-list-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 75px;
+    height: 75px;
+    background-color: #FFFFFF;
+
+    border-radius: 10px;
+
+    transition: 0.5s;
+    cursor: pointer;
+}
+.contacts__social-media-list-item:hover{
+    opacity: 0.5;
+}
+
+.contacts__social-media-description{
+    margin-bottom: 20px;
+}
+
+/*--------------------------------------------*/
+
+.contacts__company-wrapper{
+    width: 100%;
+    padding-block: 50px;
+    border-bottom: 1px solid #434141;
+}
+
+.contacts__company-title{
+    margin-bottom: 20px;
+}
+
+.contacts__company-list{
+    display: flex;
+    column-gap: 100px;
+}
+
+.contacts__company-list-item{
+    display: inline-flex;
+    flex-direction: column;
+    row-gap: 15px;
+
+}
+
+.contacts__company-list-link{
+
+    color: #FFFFFF;
+    transition: 0.5s;
+    padding: 5px 5px 5px 0px;
+    width: fit-content;
+}
+
+.contacts__company-list-link:hover{
+    background-color: #333333;
+    border-radius: 2px;
+}
+
+/*--------------------------------------------*/
+
+.contacts__company-rights-wrapper{
+    width: 100%;
+    margin-top: 50px ;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+}
+
+.contacts__company-rights-logo{
+    display: inline-block;
+    width: 160px;
+    height: 10px;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.contacts__company-rights-upButton{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+
+    transition: 0.5s;
+}
+
+.contacts__company-rights-upButton:hover{
+    opacity: 0.5;
+}
