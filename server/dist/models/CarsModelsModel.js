@@ -3,11 +3,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CarModelsModel = void 0;
 const CreateConnToDataBase_1 = require("../config/CreateConnToDataBase");
 class CarModelsModel {
-    static async get911CarModels() {
+    static async getCarModels(model) {
         const connection = await (0, CreateConnToDataBase_1.createConnToDataBase)();
         try {
             const [rows] = await connection.execute(`SELECT * FROM porsche_models 
-                 WHERE model_name LIKE '911%'`);
+                 WHERE model_name LIKE ?`, [`${model}%`]);
             return rows;
         }
         catch (err) {

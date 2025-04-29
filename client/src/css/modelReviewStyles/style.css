@@ -1,0 +1,384 @@
+@import url('../header.css');
+
+@font-face {
+    font-family: 'Futura New';
+    src: url('../../../public/assetsModelReview/fonts/FuturaNewLight-Reg.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+
+}
+@font-face {
+    font-family: 'Futura New Book';
+    src: url('../../../public/assetsModelReview/fonts/FuturaNewBook-Reg.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/*--------------------------------------------*/
+/*                 Общие стили                */
+/*--------------------------------------------*/
+
+.visually-hidden{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+body{
+    font-family: 'Futura New', cursive;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+
+    max-width: 100vw;
+
+    color: #000000;
+    background-color: #F8F8F8;
+
+    overflow-x: hidden;
+}
+
+.container{
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+a{
+    text-decoration: none;
+    color: #000000;
+}
+
+/*--------------------------------------------*/
+/*         стили CAR-REVIEW SECTION           */
+/*--------------------------------------------*/
+
+.review__header{
+    margin-top: 20px;
+    margin-bottom: 120px;
+    width: 100%;
+
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.review__header-link{
+    justify-self: flex-start;
+
+    font-family: 'Futura New Book', cursive;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    column-gap: 20px;
+
+    border: 2px transparent solid;
+    border-radius: 10px;
+    padding: 5px 10px;
+
+    transition: 0.4s;
+
+}
+.review__header-img-arrow{
+    transition: 0.4s;
+}
+
+.review__header-link:hover{
+    border-color: #898C94;
+}
+.review__header-link:hover .review__header-img-arrow{
+    transform: translateX(-50px);
+}
+
+.review__header-link{
+
+}
+
+.review__header-title{
+    font-family: 'Futura New', cursive;
+    font-weight: 300;
+    font-size: 54px;
+    letter-spacing: 3px;
+
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*--------------------------------------------*/
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, calc(-50% + 150px)); }
+    to { opacity: 0.1; transform: translate(-50%, -50%)}
+}
+
+.car-review{
+    position: relative;
+    max-height: 400px;
+    margin-bottom: 50px;
+}
+
+.review__swiper{
+    max-height: 400px;
+}
+
+.car-review:before{
+    content: '';
+
+    position: absolute;
+    top: -50px;
+    left: 50%;
+
+    display: block;
+    width: 500px;
+    height: 200px;
+
+    background: url('../../../public/assetsModelReview/images/911/911.svg') center/contain no-repeat;
+
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 150px));
+    animation: fadeIn 2s ease forwards 0.5s;
+}
+
+.introCars__swiper-wrapper{
+}
+
+.review__swiper-slide{
+    display: flex;
+    justify-content: center;
+}
+
+.review__swiper-slide-picture{
+    display: flex;
+    justify-content: center;
+}
+
+.controls:after{
+    color: #898C94;
+    background-color: #E7E8EA ;
+    border-radius: 30px;
+
+    transition: all 0.4s;
+}
+
+.review__swiper-button-prev:after{
+    padding: 20px 20px 20px 50px;
+}
+
+.review__swiper-button-next:after{
+    padding: 20px 50px 20px 20px;
+}
+
+.review__swiper-button-next:hover:after,
+.review__swiper-button-prev:hover:after{
+    transform: scale(1.2);
+}
+
+/*--------------------------------------------*/
+/*         стили CONSTRUCTOR SECTION          */
+/*--------------------------------------------*/
+.constructor__swiper-slide .swiper-slide-active{
+    position: relative;
+}
+.constructor__swiper-slide .swiper-slide-active:after{
+    content: '';
+
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: block;
+    width: 55px;
+    height: 55px;
+
+    background: url("../../../public/assetsModelReview/icons/check-mark.svg") center/contain no-repeat;");
+
+}
+
+/*--------------------------------------------*/
+/*         стили CONSTRUCTOR SWIPER           */
+/*--------------------------------------------*/
+
+.swiper,
+.swiper-wrapper {
+    overflow: visible !important;
+}
+
+.constructor{
+    position: relative;
+    z-index: 1000;
+    overflow-Y: visible;
+
+
+    width: 100%;
+    height: 500px;
+}
+.constructor__swiper{
+    position: relative;
+
+    min-width: 1800px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.constructor__swiper-wrapper{
+    position: relative;
+    z-index: 1000;
+    overflow-Y: visible;
+
+    min-width: 1800px;
+}
+
+.constructor__swiper-slide{
+    position: relative;
+    z-index: 1000;
+    overflow-Y: visible;
+
+    max-width: 550px;
+    min-height: 350px;
+
+    padding: 30px;
+    border-radius: 30px;
+
+    background-color: #E0E0E0 ;
+
+    transition: all 0.4s;
+}
+.constructor__swiper-wrapper > .swiper-slide-active{
+    transform: translateY(-75px);
+}
+
+.constructor-controls{
+    position: absolute;
+    top: 35%;
+}
+.constructor-controls:after{
+
+    color: #000000;
+    font-size: 35px;
+
+    border-radius: 20px;
+
+    transition: all 0.4s;
+}
+
+.constructor-controls:hover:after{
+    transform: scale(1.2);
+}
+
+
+/*--------------------------------------------*/
+
+.constructor__swiper-slide-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 50px;
+}
+
+.constructor__swiper-slide-info-title{
+    font-family: 'Futura New Book', cursive;
+    color: #000;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.constructor__swiper-slide-span{
+    font-family: 'Futura New Book', cursive;
+    color: #000;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.constructor__swiper-slide-info-description{
+    font-family: "Futura New Book", cursive;
+    font-size: 16px;
+    color: #898C94;
+    font-weight: 500;
+
+    border-radius: 15px;
+    border: 1px solid #898C94;
+    padding: 5px 10px;
+
+    transition: 0.5s;
+}
+
+.constructor__swiper-slide-info-description:hover{
+    background-color: #333333;
+    color: #FFFFFF;
+}
+
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+/*             стили COLOR SWIPER             */
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+
+.constructor__swiper-slide{
+    /*display: flex;*/
+    /*flex-direction: column;*/
+
+    overflow: hidden;
+}
+
+.color__swiper{
+    min-width: 500px;
+    min-height: 120px;
+}
+
+.color__swiper-wrapper{
+    min-width: 500px;
+    min-height: 120px;
+}
+
+.color__swiper-slide{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+
+    min-width: 225px;
+    min-height: 120px;
+
+    transition: 0.3s;
+}
+
+.color__swiper-slide-picture{
+    /*min-width: 225px;*/
+    /*min-height: 120px;*/
+}
+
+.color__swiper-slide-picture-info{
+    font-family: 'Futura New Book', cursive;
+    color: #000;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+
+    text-align: center;
+}
+
+
+
+

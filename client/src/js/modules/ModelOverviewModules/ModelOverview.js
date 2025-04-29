@@ -1,9 +1,12 @@
 export class ModelOverview {
-    constructor(model) {
-        this.carModel = model;
+    carModel;
+    modelList = document.querySelector('.modelRow__list')
+    modelTitle = document.querySelector('.modelRow-title');
 
+    constructor() {
         this.setHandlers();
     }
+
 
     async setHandlers(){
         document.addEventListener('DOMContentLoaded', async () => {
@@ -12,8 +15,6 @@ export class ModelOverview {
     }
 
     async innerCarModels(){
-        const modelList = document.querySelector('.modelRow__list')
-        debugger
         let carsData = await this.getCarModel()
         carsData = carsData.sort((car1, car2) => car1.model_name.localeCompare(car2.model_name));
         const modelListItems = carsData.map(car =>
@@ -60,18 +61,23 @@ export class ModelOverview {
                             </li>
                         </ul>
 
-                        <a href="" class="modelRow__list-item-confirmButton">
+                        <a href="modelReview.html" class="modelRow__list-item-confirmButton">
                             Confirm selection
                         </a>
                     </li>
             `
         ).join('');
 
-        modelList.innerHTML = modelListItems;
+        const modelNameData = `Porsche ${this.getModel()} Models`
+
+        this.modelTitle.innerHTML = modelNameData;
+        this.modelList.innerHTML = modelListItems;
     }
 
+
     async getCarModel() {
-        const url = "http://localhost:3000/API/carModels/" + this.carModel;
+        this.carModel = this.getModel();
+        const url = "http://localhost:3000/API/carModels/" + this.carModel + `?model=${this.carModel}`;
         try {
             const response = await fetch(url, {
                 method: "GET",
@@ -88,4 +94,10 @@ export class ModelOverview {
         }
 
     }
+
+    getModel(){
+        const URLParams = new URLSearchParams(window.location.search);
+        return URLParams.get('model')
+    }
+
 }

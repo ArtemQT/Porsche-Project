@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         {
             element: document.querySelector('[data-js-GT3RS-TopSpeed]'),
-            target: 296,
+            target: 330,
             isDecimal: false
         },
         {

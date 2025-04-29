@@ -3,9 +3,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CarModelsController = void 0;
 const CarsModelsModel_1 = require("../models/CarsModelsModel");
 class CarModelsController {
-    static async get911CarModels(req, res) {
+    static async getCarModels(req, res) {
         try {
-            const carModels = await CarsModelsModel_1.CarModelsModel.get911CarModels();
+            const model = req.query.model;
+            const carModels = await CarsModelsModel_1.CarModelsModel.getCarModels(model);
             res.status(200).json(carModels);
         }
         catch (err) {

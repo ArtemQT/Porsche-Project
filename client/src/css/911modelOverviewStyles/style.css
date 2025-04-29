@@ -66,6 +66,11 @@
     font-display: swap;
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(150px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 /*--------------------------------------------*/
 /*                 Общие стили                */
 /*--------------------------------------------*/
@@ -124,6 +129,10 @@ a{
 /*--------------------------------------------*/
 .modelRow__container{
     padding-block: 100px;
+
+    opacity: 0;
+    transform: translateY(150px);
+    animation: fadeIn 2s ease forwards 0.5s
 }
 
 .modelRow__list{

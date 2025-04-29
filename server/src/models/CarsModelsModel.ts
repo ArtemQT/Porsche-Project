@@ -3,12 +3,12 @@ import { RowDataPacket } from "mysql2";
 import mysql from "mysql2/promise";
 
 export class CarModelsModel {
-    static async get911CarModels() {
+    static async getCarModels(model: any) {
         const connection = await createConnToDataBase();
         try{
             const [rows] = await connection.execute(
                 `SELECT * FROM porsche_models 
-                 WHERE model_name LIKE '911%'`
+                 WHERE model_name LIKE ?`, [`${model}%`]
             )
             return rows;
         }
