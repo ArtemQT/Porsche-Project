@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CarModelsController = void 0;
-const CarsModelsModel_1 = require("../models/CarsModelsModel");
+const carModelsModel_1 = require("../models/carModelsModel");
 class CarModelsController {
     static async getCarModels(req, res) {
         try {
             const model = req.query.model;
-            const carModels = await CarsModelsModel_1.CarModelsModel.getCarModels(model);
+            const carModels = await carModelsModel_1.CarModelsModel.getCarModels(model);
             res.status(200).json(carModels);
         }
         catch (err) {

@@ -1,0 +1,66 @@
+@font-face {
+    font-family: 'Futura New Book';
+    src: url('./../../public/assetsModelReview/fonts/FuturaNewBook-Reg.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.auth-popup{
+    position: fixed;
+    top: 100px;
+    right: -600px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 30px;
+
+    background-color: #000;
+    border-radius: 30px;
+    border: 1px solid #FFFFFF;
+    padding: 15px 40px;
+
+    font-family: 'Futura New Book', sans-serif;
+    color: #fff;
+
+    transition: transform 0.5s ease;
+}
+
+.auth-popup.show{
+    transform: translateX(-610px);
+}
+
+.auth-popup__title{
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+
+}
+.auth-popup__description{
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.auth-popup__buttons button{
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 40px;
+
+    color: #000000;
+    font-size: 24px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+.auth-popup__buttons button:hover{
+    opacity: 0.6;
+}
+
+.auth-popup__icon{
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    padding: 10px;
+}

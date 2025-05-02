@@ -8,6 +8,8 @@ const usersRoutes_1 = require("./routers/usersRoutes");
 const testGelAllUsersRoute_1 = require("./routers/testGelAllUsersRoute");
 const refreshRoute_1 = require("./routers/refreshRoute");
 const carModelRoute_1 = require("./routers/carModelRoute");
+const carOverviewRoute_1 = require("./routers/carOverviewRoute");
+//------------------------------------------------------------//
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const corsOptions_1 = require("./config/corsOptions");
 const cors_1 = __importDefault(require("cors"));
@@ -22,6 +24,7 @@ server.use('/API/auth', usersRoutes_1.usersRouter);
 server.use('/API/users', testGelAllUsersRoute_1.testRouter);
 server.use('/API/refresh', refreshRoute_1.refreshTokenRouter);
 server.use('/API/carModels', carModelRoute_1.carModelsRouter);
+server.use('/API/carReview', carOverviewRoute_1.carReviewRouter);
 server.listen(PORT, () => {
     console.log(`server listening on port ${PORT}`);
 });

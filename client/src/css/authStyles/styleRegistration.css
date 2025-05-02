@@ -1,5 +1,5 @@
 @import "./styleAuthorization.css";
-
+@import "../popUpMessage.css";
 .login__form{
     row-gap: 10px;
 }

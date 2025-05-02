@@ -1,0 +1,253 @@
+@import url('../footer.css');
+@import url('../header.css');
+@import url('../popUpMessage.css');
+
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('../../../public/assetsModelOverview911/fonts/RobotoSlab-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('../../../public/assetsModelOverview911/fonts/RobotoSlab-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('../../../public/assetsMainPage/fonts/Manrope-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('../../../public/assetsMainPage/fonts/Manrope-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../../../public/assetsMainPage/fonts/Montserrat-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../../../public/assetsMainPage/fonts/Montserrat-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    src: url('../../../public/assetsMainPage/fonts/Orbitron-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    src: url('../../../public/assetsMainPage/fonts/Orbitron-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(150px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/*--------------------------------------------*/
+/*                 Общие стили                */
+/*--------------------------------------------*/
+
+.visually-hidden{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+body{
+    max-width: 100vw;
+
+    color: #000000;
+    background-color: #EAEAEA;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+}
+
+.container{
+    max-width: 1800px;
+    margin: 0 auto;
+    /*padding: 0 10px;*/
+}
+
+a{
+    text-decoration: none;
+    color: #000000;
+}
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+/*          Стили modelRow SECTION            */
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+
+.modelRow-title{
+    font-family: 'Roboto Slab', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 1.5px;
+
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+/*--------------------------------------------*/
+.modelRow__container{
+    padding-block: 100px;
+
+    opacity: 0;
+    transform: translateY(150px);
+    animation: fadeIn 2s ease forwards 0.5s
+}
+
+.modelRow__list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    column-gap: 150px;
+    row-gap: 150px;
+}
+
+.modelRow__list-item{
+    width: 400px;
+    height: 600px;
+
+    border-radius: 30px;
+
+    background-color: #FFFFFF;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 35px 30px;
+    transition: 0.3s;
+}
+
+.modelRow__list-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+}
+
+.modelRow__list-item:hover .modelRow__list-item-img{
+    transform: scale(1.1);
+}
+
+/*-----------------------------------------------*/
+.modelRow__list-item-FuelType{
+    font-family: 'Roboto Slab', sans-serif;
+
+    font-size: 16px;
+    font-weight: 300;
+    color: #000000;
+    letter-spacing: 1.2px;
+
+    background-color: #E7E8EA;
+
+    width: fit-content;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 2px 5px;
+}
+
+.modelRow__list-item-img{
+    margin-bottom: 60px;
+    align-self: center;
+
+    transition: 0.3s;
+
+}
+
+.modelRow__list-item-title{
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    margin-bottom: 20px;
+
+}
+
+.model__row-list-param{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+
+    margin-bottom: 30px;
+}
+
+.model__row-list-param-item-value{
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.model__row-list-param-item-name{
+    font-family: 'Roboto Slab', sans-serif;
+
+    font-size: 14px;
+    font-weight: 300;
+    color: #000000;;
+
+    opacity: 0.6;
+}
+
+.modelRow__list-item-confirmButton{
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #FFFFFF;
+    letter-spacing: 1.2px;
+
+    padding: 10px 50px;
+    border-radius: 10px;
+    background-color: #000000;
+
+    width: fit-content;
+    align-self: center;
+
+    transition: 0.3s;
+}
+
+.modelRow__list-item-confirmButton:hover{
+    background-color: #EAEAEA;
+    color: #000000;
+}
+
+

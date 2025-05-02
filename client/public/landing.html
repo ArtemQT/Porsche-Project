@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="../src/css/reset.css">
+    <link rel="stylesheet" href="../src/css/landingStyles/style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="icon" href="favicon/porsche.svg" type="image/x-icon">
+
+    <title>Porsche</title>
+</head>
+<body>
+    <header id="header" class="header">
+        <div class="header__container container">
+            <button class="header__burger-button">
+                <img src="assetsMainPage/icons/burger-btn.svg"
+                     alt=""
+                     title="Боковое меню"
+                     class="header__burger-img"
+                     loading="lazy"
+                     width="30"
+                     height="15"
+                >
+            </button>
+            <a href="landing.html" class="header__main-logo" title="Porsche">
+                <img src="assetsMainPage/icons/Porsche-logo.svg"
+                     alt="Логотип Porsche"
+                     class="header__logo-img"
+                     loading="lazy"
+                     width="160"
+                     height="10"
+                >
+            </a>
+
+            <div class="header__wrapper-actions">
+                <nav class="header__nav">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item">
+                            <a href="#models" class="header__nav-link">Models</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="#Porsche_Finder" class="header__nav-link">Porsche Finder</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="#footer" class="header__nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+                <ul class="header__list-icons">
+                    <li class="header__list-icons-item">
+                        <button class="header__user-button" title="Пользователь">
+                            <img src="assetsMainPage/icons/user-profile-logo.svg"
+                                 loading="lazy"
+                                 width="20"
+                                 height="20"
+                                 alt=""
+                            >
+                        </button>
+
+                        <div class="header__dropdown-menu">
+                        </div>
+                    </li>
+                    <li class="header__list-icons-item">
+                        <button class="header__basket-button" title="Корзина">
+                            <img src="assetsMainPage/icons/basket.svg"
+                                 alt=""
+                                 loading="lazy"
+                                 width="25"
+                                 height="25"
+                            >
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="main">
+        <h1 class="visually-hidden">Porsche cite</h1>
+
+        <section class="introCars">
+            <div class="introCars__container">
+                <div class="introCars__container-text">
+                    <h2 class="introCars__container-title h2-title">
+                        Porsche is made<br/>
+                        for those who live,<br/>
+                        not just exist
+                    </h2>
+                    <p class="introCars__container-paragraph intro-description">
+                        No compromises. No half measures.<br/>
+                        Just the perfect symbiosis of power and elegance,<br/>
+                        waiting to ignite your next adventure.
+                    </p>
+                    <a class="introCars__container-button link-toConfigure">
+                        Configure Your Porsche
+                    </a>
+                    <div class="introCars__quote-wrapper">
+                        <q class="founder-quote__text">
+                            <em>I couldn’t find the perfect car, so I built it myself.</em>
+                        </q>
+                        <span class="founder-quote__author">— Ferry Porsche, <span class="founder-quote__year">1948</span></span>
+                    </div>
+                </div>
+
+                <div class="introCars__container-car">
+                    <div class="introCars__container-car__caption h2-title">
+                        The porsche gt3 rs: <br/>
+                        our ultimate race machine
+                    </div>
+
+                    <div class="introCars__swiper-container swiper">
+                        <div class="introCars__swiper-wrapper swiper-wrapper">
+                            <div class="introCars__swiper-slide swiper-slide">
+                                <div class="introCars__swiper-slide-picture">
+                                    <img src="assetsMainPage/introCars-models/porsche-gt3-rs(1).jfif" alt="">
+                                </div>
+                            </div>
+                            <div class="introCars__swiper-slide swiper-slide">
+                                <div class="introCars__swiper-slide-picture">
+                                    <img src="assetsMainPage/introCars-models/porsche-gt3-rs(2).jfif" alt="">
+                                </div>
+                            </div>
+                            <div class="introCars__swiper-slide swiper-slide">
+                                <div class="introCars__swiper-slide-picture">
+                                    <img src="assetsMainPage/introCars-models/porsche-gt3-rs(3).jfif" alt="">
+                                </div>
+                            </div>
+                            <div class="introCars__swiper-slide swiper-slide">
+                                <div class="introCars__swiper-slide-picture">
+                                    <img src="assetsMainPage/introCars-models/porsche-gt3-rs(4).jfif" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul class="introCars__car__specs">
+                        <li class="introCars__car__specs-item">
+                            <div class="car__specs-item-value">
+                                <span data-js-GT3RS-Acceleration>0</span><span class="car__specs-value-span">s</span>
+                            </div>
+                            <div class="car__specs-item-key">
+                                Acceleration 0 - 100 km/h
+                            </div>
+                        </li>
+                        <li class="introCars__container-car__specs-item">
+                            <div class="car__specs-item-value">
+                                <span data-js-GT3RS-Power>0</span><span class="car__specs-value-span">kW / </span><span data-js-GT3RS-HorsePower>0</span><span class="car__specs-value-span">PS</span>
+                            </div>
+                            <div class="car__specs-item-key">
+                                Power (kW)/Power (PS)
+                            </div>
+                        </li>
+                        <li class="introCars__container-car__specs-item">
+                            <div class="car__specs-item-value">
+                                <span data-js-GT3RS-TopSpeed>0</span><span class="car__specs-value-span">km/h</span>
+                            </div>
+                            <div class="car__specs-item-key">
+                                Top speed
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="introCars__car__sound-wrapper">
+                        <p class="introCars__car__sound-description intro-description">
+                            Sets the tempo at 9,000 rpm.<br/>
+                            Atmospheric engine delivers a clean sound
+                        </p>
+
+                        <div class="introCars__container-car-audio-player hidden">
+                        </div>
+
+                        <button class="introCars__container-car-audio-button">
+                            <img src="assetsMainPage/icons/icon-play.png"
+                                 alt=""
+                                 width="30"
+                                 height="30"
+                            >
+                            Hold down to listen to the sound
+                        </button>
+                    </div>
+
+                    <a href="modelReview.html?model_name=GT3 RS" class="introCars__car-order-button link-toConfigure">
+                    Configure Your GT-3 RS
+                </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="modelRow">
+            <div class="modelRow__container container">
+                <h2 class="modelRow__title">
+                    Model row
+                </h2>
+                <ul class="modelRow__list" id="models">
+                    <li class="modelRow__list-item">
+                        <div class="modelRow__list-item-container">
+                            <div class="modelRow__list-item-icon">
+                                <img src="assetsMainPage/icons/911-icon.svg"
+                                     alt=""
+                                     width="100"
+                                     height="40"
+                                >
+                            </div>
+                            <div class="modelRow__list-item__fuelType">
+                                Petrol
+                            </div>
+                            <p class="modelRow__list-item-description">
+                                Sports car icon with rear-mounted engine and maximum performance
+                            </p>
+                            <a href="modelOverview.html?model=911" class="modelRow__list-item-button">
+                                All 911 models
+                            </a>
+                        </div>
+                    </li>
+                    <li class="modelRow__list-item">
+                        <div class="modelRow__list-item-container">
+                            <div class="modelRow__list-item-icon">
+                                <img src="assetsMainPage/icons/718-icon.svg"
+                                     alt=""
+                                     width="100"
+                                     height="40"
+                                >
+                            </div>
+                            <div class="modelRow__list-item__fuelType">
+                                Petrol
+                            </div>
+
+                            <p class="modelRow__list-item-description">
+                                Two-seater with powerful dynamics thanks to the central engine location
+                            </p>
+                            <a href="modelOverview.html?model=718" class="modelRow__list-item-button">
+                                All 718 models
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="findCar">
+            <div class="findCar__container container" id="Porsche_Finder">
+                <div class="findCar__container-image">
+                    <img src="assetsMainPage/images/find-car-section-img.avif" alt=""
+                         loading="lazy"
+                    >
+                </div>
+                <div class="findCar__container-info">
+                    <h2 class="findCar__title">
+                        Find your new or pre-owned Porsche.
+                    </h2>
+                    <p class="findCar__description">
+                        A Porsche is as individual as its owner. It is always
+                        an expression of its own personality. We can help you
+                        find the car of your dreams at authorized Porsche centers.
+                    </p>
+                    <a href="https://finder.porsche.com/lt/en-LT" class="findCar__button" target="_blank">
+                        Find your new Porsche
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="contacts">
+
+        </section>
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="contacts__container container">
+            <h2 class="visually-hidden">Contacts information</h2>
+
+            <div  class="contacts__wrapper">
+                <div class="contacts__findInfo-wrapper">
+                    <h3 class="contacts__findInfo-title contacts-title">
+                        Divisions and contact information
+                    </h3>
+                    <p class="contacts__findInfo-description">
+                        Do you have any questions?
+                    </p>
+                    <a href="https://www.porsche.com/central-eastern-europe/ru/locations-and-contact/" class="contacts__findInfo-link" target="_blank">
+                        Find contacts
+                    </a>
+                </div>
+
+                <div class="contacts__social-media-wrapper">
+                    <h3 class="contacts__social-media-title contacts-title">
+                        Social media
+                    </h3>
+                    <p class="contacts__social-media-description">
+                        Connect with us through social media.
+                    </p>
+                    <ul class="contacts__social-media-list">
+                        <li class="contacts__social-media-list-item">
+                            <a href="https://www.instagram.com/porsche/" class="contacts__social-media-list-link" target="_blank">
+                                <img src="assetsMainPage/icons/social-media-icons/icon-instagram.svg"
+                                     alt=""
+                                     width="40"
+                                     height="40"
+                                >
+                            </a>
+                        </li>
+                        <li class="contacts__social-media-list-item">
+                            <a href="https://www.facebook.com/porsche/" class="contacts__social-media-list-link" target="_blank">
+                                <img src="assetsMainPage/icons/social-media-icons/icon-facebook.svg"
+                                     alt=""
+                                     width="40"
+                                     height="40"
+                                >
+                            </a>
+                        </li>
+                        <li class="contacts__social-media-list-item">
+                            <a href="https://www.pinterest.com/porsche/" class="contacts__social-media-list-link" target="_blank">
+                                <img src="assetsMainPage/icons/social-media-icons/icon-pinterest.svg"
+                                     alt=""
+                                     width="40"
+                                     height="40"
+                                >
+                            </a>
+                        </li>
+                        <li class="contacts__social-media-list-item">
+                            <a href="https://www.youtube.com/user/Porsche" class="contacts__social-media-list-link" target="_blank">
+                                <img src="assetsMainPage/icons/social-media-icons/icon-youtube.svg"
+                                     alt=""
+                                     width="40"
+                                     height="40"
+                                >
+                            </a>
+                        </li>
+                        <li class="contacts__social-media-list-item">
+                            <a href="https://x.com/Porsche" class="contacts__social-media-list-link" target="_blank">
+                                <img src="assetsMainPage/icons/social-media-icons/icon-xcom.svg"
+                                     alt=""
+                                     width="60"
+                                     height="60"
+                                >
+                            </a>
+                        </li>
+                        <li class="contacts__social-media-list-item">
+                            <a href="https://www.linkedin.com/company/porsche-ag/" class="contacts__social-media-list-link" target="_blank">
+                                <img src="assetsMainPage/icons/social-media-icons/icon-linkedin.svg"
+                                     alt=""
+                                     width="30"
+                                     height="30"
+                                >
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="contacts__company-wrapper">
+                <h3 class="contacts__company-title contacts-title">
+                    Company
+                </h3>
+                <ul class="contacts__company-list">
+                    <li class="contacts__company-list-item">
+                        <a href="https://www.porsche.com/central-eastern-europe/ru/" class="contacts__company-list-link" target="_blank">
+                            Porsche Central and Eastern Europe
+                        </a>
+                        <a href="https://www.porsche.com/central-eastern-europe/ru/legal/compliance/" class="contacts__company-list-link" target="_blank">
+                            Compliance
+                        </a>
+                    </li>
+
+                    <li class="contacts__company-list-item">
+                        <a href="https://www.porsche.com/central-eastern-europe/ru/aboutporsche/jobs/" class="contacts__company-list-link" target="_blank">
+                            Vacancies
+                        </a>
+                        <a href="https://www.porsche.com/central-eastern-europe/ru/aboutporsche/responsibility/" class="contacts__company-list-link" target="_blank">
+                            Responsibility
+                        </a>
+                    </li>
+
+                    <li class="contacts__company-list-item">
+                        <a href="https://www.porsche.com/central-eastern-europe/ru/globalpartnershipcouncil" class="contacts__company-list-link" target="_blank">
+                            Global Partnership Council
+                        </a>
+                        <a href="https://www.porsche.com/central-eastern-europe/ru/legal/compliance/" class="contacts__company-list-link" target="_blank">
+                            News and press
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="contacts__company-rights-wrapper">
+                <p class="contacts__company-rights-description">
+                    © 2025 Porsche.com. All rights reserved.
+                </p>
+
+                <a href="#header" class="contacts__company-rights-logo">
+                    <img src="assetsMainPage/icons/porsche-white-logo.svg"
+                         alt="Логотип Porsche"
+                         class="header__logo-img"
+                         loading="lazy"
+                         width="160"
+                         height="10"
+                    >
+                </a>
+
+                <a href="#header" class="contacts__company-rights-upButton">
+                    <img src="assetsMainPage/icons/upButton.svg"
+                         alt=""
+                         class="header__logo-img"
+                         loading="lazy"
+                         width="20"
+                         height="20"
+                    >
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="../src/js/landingModules/mainPageModule.js"></script>
+    <script type="module" src="../src/js/landingModules/sliderIntro.js"></script>
+    <script type="module" src="../src/js/landingModules/animateCountersModule.js"></script>
+    <script type="module" src="../src/js/landingModules/audioRoadModule.js"></script>
+
+    <script src="https://unpkg.com/wavesurfer.js@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</body>
+</html>

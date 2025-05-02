@@ -126,6 +126,11 @@ a{
     to { opacity: 0.1; transform: translate(-50%, -50%)}
 }
 
+@keyframes fadeInLoader {
+    from { opacity: 0; transform: translateY(150px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 .car-review{
     position: relative;
     max-height: 400px;
@@ -134,6 +139,9 @@ a{
 
 .review__swiper{
     max-height: 400px;
+    opacity: 0;
+    transform: translateY(150px);
+    animation: fadeInLoader 2s ease forwards 0.5s
 }
 
 .car-review:before{
@@ -152,9 +160,6 @@ a{
     opacity: 0;
     transform: translate(-50%, calc(-50% + 150px));
     animation: fadeIn 2s ease forwards 0.5s;
-}
-
-.introCars__swiper-wrapper{
 }
 
 .review__swiper-slide{
@@ -198,13 +203,13 @@ a{
     content: '';
 
     position: absolute;
-    bottom: -100px;
+    bottom: -55px;
     left: 50%;
     transform: translate(-50%, -50%);
 
     display: block;
-    width: 55px;
-    height: 55px;
+    width: 35px;
+    aspect-ratio: 1;
 
     background: url("../../../public/assetsModelReview/icons/check-mark.svg") center/contain no-repeat;");
 
@@ -226,7 +231,7 @@ a{
 
 
     width: 100%;
-    height: 500px;
+    /*height: 500px;*/
 }
 .constructor__swiper{
     position: relative;
@@ -236,23 +241,34 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .constructor__swiper-wrapper{
+    display: none;
+
     position: relative;
     z-index: 1000;
     overflow-Y: visible;
 
     min-width: 1800px;
+    margin-bottom: 50px;
+
+}
+
+.active-swiper{
+    display: flex;
 }
 
 .constructor__swiper-slide{
+
     position: relative;
     z-index: 1000;
     overflow-Y: visible;
 
     max-width: 550px;
-    min-height: 350px;
+    height: 375px;
+    max-height: 375px;
 
     padding: 30px;
     border-radius: 30px;
@@ -265,10 +281,6 @@ a{
     transform: translateY(-75px);
 }
 
-.constructor-controls{
-    position: absolute;
-    top: 35%;
-}
 .constructor-controls:after{
 
     color: #000000;
@@ -280,10 +292,37 @@ a{
 }
 
 .constructor-controls:hover:after{
-    transform: scale(1.2);
+    transform: scale(1.3);
 }
 
+.swiper-slide-info{
+    font-family: 'Futura New Book', cursive;
+    color: #000;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
 
+    text-align: center;
+}
+
+.swiper-slide-price{
+    font-family: "Futura New Book", cursive;
+    font-size: 18px;
+    color: #000000;
+    font-weight: 500;
+
+    border-radius: 15px;
+    border: 1px solid #898C94;
+    padding: 5px 30px;
+
+    transition: 0.4s;
+}
+
+.swiper-slide-price:hover{
+    background-color: #000000;
+    color: #FFFFFF;
+    cursor: default;
+}
 /*--------------------------------------------*/
 
 .constructor__swiper-slide-info{
@@ -291,15 +330,17 @@ a{
     justify-content: space-between;
     align-items: center;
 
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 .constructor__swiper-slide-info-title{
     font-family: 'Futura New Book', cursive;
     color: #000;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 400;
     line-height: normal;
+
+    margin-bottom: 20px;
 }
 
 .constructor__swiper-slide-span{
@@ -356,7 +397,6 @@ a{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    row-gap: 20px;
 
     min-width: 225px;
     min-height: 120px;
@@ -364,20 +404,363 @@ a{
     transition: 0.3s;
 }
 
-.color__swiper-slide-picture{
-    /*min-width: 225px;*/
-    /*min-height: 120px;*/
+.color__swiper-slide-picture img{
+    margin-bottom: 20px;
 }
 
-.color__swiper-slide-picture-info{
-    font-family: 'Futura New Book', cursive;
-    color: #000;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: normal;
+.constructor-controls-button-prev,
+.constructor-controls-button-next{
+    position: absolute;
+    top: 60%;
+}
 
+.color__swiper-slide-price{
+    margin-bottom: 40px;
+    align-self: start;
+}
+
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+/*             стили WHEELS SWIPER            */
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+
+.wheels__swiper{
+    min-width: 500px;
+    min-height: 120px;
+}
+
+.wheels__swiper-wrapper{
+    min-width: 500px;
+    min-height: 120px;
+}
+
+.wheels__swiper-slide{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 100px;
+    min-height: 100px;
+}
+
+.swiper-slide-active{
+    transition: 0.4s;
+}
+
+.wheels__swiper-wrapper .swiper-slide-active{
+    transform: translateY(-25px);
+}
+
+.wheels-controls-button-prev{
+    position: absolute;
+    left: -20px;
+}
+
+.wheels-controls-button-next{
+    position: absolute;
+    right: -20px;
+}
+
+.wheels__swiper-slide-picture-info{
+    width: 120px;
+}
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+/*           стили INTERIOR SWIPER            */
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+
+
+.interior__swiper-info{
+    margin-bottom: 10px;
+}
+
+.interior__swiper{
+    min-width: 500px;
+    min-height: 150px;
+}
+
+.interior__swiper-wrapper{
+    min-width: 500px;
+    min-height: 150px;
+}
+
+.interior__swiper-slide{
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 5px;
+
+    transition: 0.3s;
+
+}
+
+.interior__swiper-slide-picture img{
+    overflow: hidden;
+    border-radius: 50px;
+}
+
+.interior__swiper-wrapper .swiper-slide-active{
+    position: relative;
+}
+.interior__swiper-wrapper .swiper-slide-active:after{
+    content: '';
+
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: block;
+    width: 40px;
+    height: 40px;
+
+    background: url("../../../public/assetsModelReview/icons/check-mark.svg") center/contain no-repeat;");
+
+}
+
+.interior__swiper-slide-price{
+    position: absolute;
+    top: -55px;
+    right: 10px;
     text-align: center;
 }
+
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+/*            стили PACKAGE SWIPER            */
+/*            стили EXHAUST SWIPER            */
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+
+.package__swiper-info,
+.exhaust__swiper-info{
+    margin-bottom: 10px;
+}
+
+.package__swiper,
+.exhaust__swiper{
+    min-width: 500px;
+}
+
+.package__swiper-wrapper,
+.exhaust__swiper-wrapper{
+    min-width: 500px;
+}
+
+.package__swiper-slide,
+.exhaust__swiper-slide{
+    max-width: 500px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.package-controls-button-prev,
+.exhaust-controls-button-prev{
+    position: absolute;
+    left: -20px;
+}
+
+.package-controls-button-next,
+.exhaust-controls-button-next{
+    position: absolute;
+    right: -20px;
+}
+
+.package__swiper-slide-price,
+.exhaust__swiper-slide-price{
+    align-self: start;
+    margin-bottom: 15px;
+}
+
+.package__swiper-wrapper .swiper-slide-active:after,
+.exhaust__swiper-wrapper .swiper-slide-active:after
+{
+    content: '';
+
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: block;
+    width: 35px;
+    aspect-ratio: 1;
+
+    background: url("../../../public/assetsModelReview/icons/check-mark.svg") center/contain no-repeat;");
+
+}
+
+/*--------------------------------------------*/
+
+.package__swiper-slide-title,
+.exhaust__swiper-slide-title{
+    font-family: 'Futura New', cursive;
+    font-weight: 600;
+    color: #000;
+    font-size: 28px;
+    letter-spacing: 1.5px;
+    line-height: normal;
+
+    margin-bottom: 10px;
+}
+
+.package__swiper-slide-description,
+.exhaust__swiper-slide-description{
+    font-family: 'Futura New', cursive;
+    font-weight: 400;
+    color: #000;
+    font-size: 22px;
+    text-align: center;
+    line-height: 1.3;
+
+    height: 150px;
+    max-width: 470px;
+    max-height: 150px;
+    overflow: hidden;
+}
+
+
+
+
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+/*    стили CONSTRUCTOR CONTROL WRAPPER       */
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+
+.constructor-controls-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    min-width: 1800px;
+
+    margin-bottom: 100px;
+}
+/*           стили constructor-control        */
+.constructor-control-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+}
+
+.constructor-control{
+    font-family: 'Futura New Book', cursive;
+    font-weight: 400;
+    font-size: 20px;
+    padding: 10px 30px;
+
+    color: #FFFFFF;
+    background-color: black;
+
+    border-radius: 15px;
+    border: 1px solid transparent;
+    transition: 0.4s;
+}
+
+.constructor-control:hover{
+    background-color: transparent;
+    border-color: #000000;
+    color: #000000;
+}
+
+
+/*              стили ПАГИНАЦИИ               */
+.constructor-pagination-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    column-gap: 50px;
+}
+
+.constructor-pagination-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Futura New Book", cursive;
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+
+    row-gap: 5px;
+
+    transition: 0.5s;
+}
+
+.active-bullet-item{
+    transform: translateY(-20px);
+}
+
+.constructor-pagination-bullet{
+    background-color: #000000;
+    border-radius: 50%;
+    padding: 15px;
+
+    transition: 0.2s;
+}
+
+.constructor-pagination-bullet img{
+    max-width: 30px;
+    max-height: 30px;
+}
+
+.constructor-pagination-bullet:hover{
+    transform: scale(1.2);
+}
+
+
+/*              стили Total Price              */
+.constructor-total-price-wrapper{
+    position: relative;
+    right: -95px;
+
+    background-color: #000000;
+    color: #FFFFFF;
+    border: 3px solid #FFFFFF;
+    padding: 20px 100px 40px 20px;
+
+    border-radius: 40px;
+
+    transition: 0.4s;
+}
+
+.constructor-total-price-wrapper:hover{
+    cursor: default;
+    transform: translateX(-20px);
+}
+
+.constructor-total-price-label{
+    color: #898C94;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.constructor-total-price{
+    font-family: "Futura New Book", cursive;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2px;
+
+}
+
+
 
 
 
