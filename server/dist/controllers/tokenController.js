@@ -18,7 +18,7 @@ class TokenController {
         const refreshToken = cookies.jwt;
         const users = await tokenModel_1.TokenModel.getUserByToken(refreshToken);
         if (users.length === 0) {
-            res.sendStatus(403); // Forbidden
+            res.sendStatus(403);
             return;
         }
         const foundUser = users[0];

@@ -84,12 +84,12 @@ export class AuthenticateUser {
             const accessToken: string = jwt.sign(
                 {"userName": user.user_name},
                 process.env.ACCESS_TOKEN_SECRET!,
-                {expiresIn: "30s"}
+                {expiresIn: "60s"}
             )
             const refreshToken: string = jwt.sign(
                 {"userName": user.user_name},
                 process.env.REFRESH_TOKEN_SECRET!,
-                {expiresIn: "1d"}
+                {expiresIn: "7d"}
             )
 
             console.log('saving jwt')
@@ -97,7 +97,7 @@ export class AuthenticateUser {
             res.cookie('jwt', refreshToken, {
                 httpOnly: true,
                 secure: false,
-                maxAge: 24 * 60 * 60 * 1000
+                maxAge: 7 * 24 * 60 * 60 * 1000
             });
             console.log('jwt saved in cookies')
 

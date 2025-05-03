@@ -88,20 +88,29 @@ a{
     border: 2px transparent solid;
     border-radius: 10px;
     padding: 5px 10px;
+    background-color: transparent;
 
     transition: 0.4s;
 
 }
-.review__header-img-arrow{
-    transition: 0.4s;
-}
-
 .review__header-link:hover{
     border-color: #898C94;
+}
+
+.review__header-img-arrow{
+    transition: 0.4s;
 }
 .review__header-link:hover .review__header-img-arrow{
     transform: translateX(-50px);
 }
+
+.review__header-img-save{
+    transition: 1s;
+}
+.review__header-link:hover .review__header-img-save{
+    transform: rotate(720deg);
+}
+
 
 .review__header-link{
 
@@ -115,6 +124,7 @@ a{
 
 
     position: absolute;
+    z-index: 10;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -135,6 +145,8 @@ a{
     position: relative;
     max-height: 400px;
     margin-bottom: 50px;
+
+    z-index: 1;
 }
 
 .review__swiper{
@@ -142,24 +154,6 @@ a{
     opacity: 0;
     transform: translateY(150px);
     animation: fadeInLoader 2s ease forwards 0.5s
-}
-
-.car-review:before{
-    content: '';
-
-    position: absolute;
-    top: -50px;
-    left: 50%;
-
-    display: block;
-    width: 500px;
-    height: 200px;
-
-    background: url('../../../public/assetsModelReview/images/911/911.svg') center/contain no-repeat;
-
-    opacity: 0;
-    transform: translate(-50%, calc(-50% + 150px));
-    animation: fadeIn 2s ease forwards 0.5s;
 }
 
 .review__swiper-slide{
@@ -170,6 +164,7 @@ a{
 .review__swiper-slide-picture{
     display: flex;
     justify-content: center;
+
 }
 
 .controls:after{
@@ -191,6 +186,30 @@ a{
 .review__swiper-button-next:hover:after,
 .review__swiper-button-prev:hover:after{
     transform: scale(1.2);
+}
+
+@keyframes modelSeriesLoader {
+    from {opacity: 0; transform: translate(-50%, calc(-50% + 150px)) scaleX(3.5); }
+    to {opacity: 0.5; transform: translate(-50%, -50%) scaleX(3.5)}
+}
+
+.review__header-modelSeries{
+    position: absolute;
+    z-index: -1;
+    top: 230px;
+    left: 48%;
+
+
+    font-family: 'Agency FB', cursive;
+    font-weight: 700;
+    font-size: 200px;
+    letter-spacing: -15px;
+
+    color: #898C94;
+
+    transform: translate(-50%, calc(-50% + 150px)) scaleX(3.5);
+    opacity: 0;
+    animation: modelSeriesLoader 2s ease forwards 1s;
 }
 
 /*--------------------------------------------*/
@@ -644,7 +663,6 @@ a{
 
     min-width: 1800px;
 
-    margin-bottom: 100px;
 }
 /*           стили constructor-control        */
 .constructor-control-list{
@@ -760,8 +778,168 @@ a{
 
 }
 
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+/*           стили SAVE CONFIGURATION         */
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+
+.save-container{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 600px;
+    height: 700px;
+    border-radius: 45px;
+    background: rgba(255, 255, 255, 0.70);
+    padding: 30px 50px;
 
 
+    box-shadow: 0px 22px 22px 0px rgba(60, 87, 99, 0.10);
+    backdrop-filter: blur(20px);
 
+    z-index: 10000;
 
+    transition: 0.5s;
+}
 
+.save-container.hidden{
+    display: none;
+}
+
+.save-container__exit-button{
+    align-self: start;
+
+    border: none;
+    background: none;
+
+    margin-bottom: 50px;
+
+    transition: 0.4s;
+}
+
+.save-container__exit-button:hover{
+    transform: scale(1.2);
+}
+
+.save-container__preview-img{
+    margin-bottom: 20px;
+}
+
+.save-container-price-title{
+    color: #000;
+
+    font-family: "Futura New Book", cursive;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+
+    margin-bottom: 15px;
+
+}
+
+.save-container-info{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.save-container__base-price-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.save-container-price-list{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #898C94;
+}
+
+.save-container__base-price-info{
+    color: #000000;
+    font-family: "Futura New", cursive;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.options-price, .base-price, .total-price-for-save{
+    letter-spacing: 1.5px;
+}
+
+.save-container__total-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.save-container__total-price-title{
+    color: #000;
+    font-family: "Futura New Book", cursive;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.save-container__total-price-info{
+    color: #000;
+    font-family: "Futura New Book", cursive;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.save-container__confirmBtn{
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    column-gap: 20px;
+
+    background-color: #000000;
+
+    padding-inline: 10px;
+    border-radius: 30px;
+    border: 2px solid transparent;
+
+    font-family: "Futura New Book", cursive;
+    font-size: 22px;
+    font-weight: 500;
+    color: #FFFFFF;
+
+    transition: 0.5s;
+}
+.save-container__confirmBtn:after{
+    content: "";
+
+    position: relative;
+    right: 0;
+
+    display: inline-block;
+    width: 100px;
+    height: 60px;
+
+    background: url('../../../public/assetsModelReview/icons/Porshe-icon-model.svg') center/contain no-repeat;
+
+    transition: transform 0.5s;
+}
+
+.save-container__confirmBtn:hover{
+    background-color: #FFFFFF;
+    border-color: #000000;
+    color: #000000;
+}
+.save-container__confirmBtn:hover:after{
+    transform: translateX(100px) rotate(90deg);
+}

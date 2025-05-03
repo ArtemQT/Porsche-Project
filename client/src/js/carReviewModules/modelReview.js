@@ -1,11 +1,17 @@
+import { SaveConfiguration } from "./saveConfiguration.js";
+export let BASE_PRICE = 0;
+
 class ModelReview {
 
     reviewCarNameTitle = document.querySelector('.review__header-title');
     reviewImgCollection = document.querySelectorAll('.review__swiper-slide-picture img');
     basePriceEl = document.querySelector('.total-price');
+    reviewModelSeriesEl = document.querySelector('.review__header-modelSeries');
+    saveContainerPreviewImg = document.querySelector('.save-container__preview-img img');
 
     constructor() {
         this.setHandlers();
+        SaveConfiguration.handleConfigurationButtons()
     }
 
     async setHandlers(){
@@ -16,12 +22,25 @@ class ModelReview {
 
     async innerCarData(){
         const carData = await this.getCar();
+
+        // Название модели porsche
         this.reviewCarNameTitle.textContent = `${carData.model_series} ${carData.model_name}`;
-        this.basePriceEl.textContent = `${carData.base_price}`
+
+        // Ряд porsche
+        this.reviewModelSeriesEl.textContent = `${carData.model_series}`;
+
+        // Стартовая цена модели
+        this.basePriceEl.textContent = `${carData.base_price}`;
+        BASE_PRICE = parseInt(carData.base_price);
+
+        // Превью img
         this.reviewImgCollection[0].src = `${carData.preview_images[0]}`;
         this.reviewImgCollection[1].src = `${carData.preview_images[1]}`;
-    }
 
+        // Превью сохранения img
+        this.saveContainerPreviewImg.src = `${carData.preview_images[1]}`;
+
+    }
     async getCar() {
         const carModel = this.getModelName()
 
@@ -43,7 +62,6 @@ class ModelReview {
         }
 
     }
-
     getModelName(){
         const URLParams = new URLSearchParams(window.location.search);
         return URLParams.get('model_name')
@@ -51,8 +69,11 @@ class ModelReview {
 }
 
 
+
 import { AuthMenu } from "../services/AuthMenuModule.js";
 
 AuthMenu.AuthMenuInit()
 
 new ModelReview()
+
+

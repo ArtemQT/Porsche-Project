@@ -5,9 +5,13 @@ import { TokenModel } from "../models/tokenModel"
 import dotenv from "dotenv";
 dotenv.config();
 
-
+// HTTP 401: клиент не прошёл аутентификацию, и подразумевает, что успешный ответ может быть возвращён после действительной аутентификации,
+// HTTP 403: клиенту не разрешён доступ к ресурсу, несмотря на предоставление данных
 export class TokenController {
     static async handleRefreshToken(req: Request, res: Response) {
+
+        // Проверка наличия refresh токена в куках
+        // Если пользователь не зарегистрирован, то этот код проверяет это
         const cookies = req.cookies;
         if (!cookies?.jwt) {
             res.sendStatus(401);
@@ -15,9 +19,11 @@ export class TokenController {
         }
         const refreshToken: string = cookies.jwt;
 
+        // Проверка соотв. полученного токена с токеном пользователя
+        // Если кто-то пытается подменить токен, то этот код проверяет его действительность
         const users: RowDataPacket[] = await TokenModel.getUserByToken(refreshToken);
         if (users.length === 0) {
-            res.sendStatus(403) // Forbidden
+            res.sendStatus(403)
             return;
         }
 
@@ -34,9 +40,9 @@ export class TokenController {
                 const accessToken: string = jwt.sign(
                     {"userName": decoded.userName},
                     process.env.ACCESS_TOKEN_SECRET!,
-                    { expiresIn: "30s" }
+                    { expiresIn: "60s" }
                 )
-                res.json({
+                res.status(200).json({
                     accessToken,
                     "message": "Токен успешно обновлен"
                 })

@@ -81,8 +81,22 @@
                 <h2 class="review__header-title">
 
                 </h2>
+
+                <button class="review__header-link save-configuration-btn">
+                    Save configuration
+                    <img src="./assetsModelReview/icons/save-configuration.svg" alt=""
+                         width="30"
+                         height="20"
+                         loading="lazy"
+                         class="review__header-img-save"
+                    >
+                </button>
             </div>
         </header>
+
+        <div class="review__header-modelSeries">
+
+        </div>
 
         <section class="car-review">
             <div class="review__swiper swiper">
@@ -117,7 +131,7 @@
             <div class="constructor__swiper swiper container">
                 <div class="constructor__swiper-wrapper swiper-wrapper">
 
-                    <!--         Слайдер цветов эктсерьера          -->
+                    <!--         Слайдер цветов экстерьера          -->
                     <div class="constructor__swiper-slide swiper-slide">
                         <h3 class="constructor__swiper-slide-info-title">
                             Exterior Colours
@@ -613,6 +627,65 @@
 
             </div>
         </section>
+
+        <div class="save-container hidden">
+            <button class="save-container__exit-button">
+                <img src="assetsModelReview/icons/close.svg" alt=""
+                     width="20"
+                     height="20"
+                >
+            </button>
+
+            <div class="save-container__preview-img">
+                <img src="" alt=""
+                     width="400"
+                     height="300"
+                >
+            </div>
+
+            <div class="save-container-info">
+                <div class="save-container__price-wrapper">
+                    <h3 class="save-container-price-title">
+                        Price information
+                    </h3>
+                    <ul class="save-container-price-list">
+                        <li class="save-container-price-list-item">
+                            <div class="save-container__base-price-info">
+                                <div class="save-container__base-price-title">
+                                    Base price
+                                </div>
+                                <div class="save-container__base-price">
+                                    £ <strong><span class="base-price"></span>.00</strong>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="save-container-price-list-item">
+                            <div class="save-container__base-price-info">
+                                <div class="save-container__base-price-title">
+                                    Amount price of selected options
+                                </div>
+                                <div class="save-container__base-price">
+                                    £ <strong><span class="options-price"></span>.00</strong>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="save-container__total-price price-info">
+                    <h3 class="save-container__total-price-title">
+                        Total price
+                    </h3>
+                    <div class="save-container__total-price-info">
+                        £ <strong><span class="total-price-for-save">150200</span>.00</strong>
+                    </div>
+                </div>
+            </div>
+
+            <button class="save-container__confirmBtn">
+                Save Porsche configuration
+            </button>
+        </div>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

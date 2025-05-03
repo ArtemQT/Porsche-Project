@@ -15,6 +15,12 @@ class ModelOverview {
         this.setHandlers();
     }
 
+    popUpLogInMessage() {
+        this.popUpMessage.show(
+            "Authorization required",
+            "To continue, you must log in."
+        )
+    }
 
     async setHandlers(){
         document.addEventListener('DOMContentLoaded', async () => {
@@ -114,18 +120,57 @@ class ModelOverview {
         const confirmButtonList = document.querySelectorAll('.modelRow__list-item-confirmButton');
 
         confirmButtonList.forEach((button) => {
-            button.addEventListener('click', (e) => {
+            button.addEventListener('click', async (e) => {
                 e.preventDefault();
 
+                // Проверка существования токена
                 const token = localStorage.getItem('token');
                 if(!token){
-                    this.popUpMessage.show(
-                        "Authorization required",
-                        "To continue, you must log in."
-                    )
+                    this.popUpLogInMessage()
+                    return;
                 }
-                else{
-                    // window.location.href = `modelReview.html?model_name=${car.model_name}`
+
+                // Верификация токена
+                try{
+                    const verifyUrl = 'http://localhost:3000/API/verifyJwt'
+
+                    const response = await fetch(verifyUrl, {
+                        method: "GET",
+                        headers: {
+                            "content-type": "application/json",
+                            Authorization: `Bearer ${token}`
+                        }
+                    })
+
+                    // Если токен валиден
+                    if (response.ok) {
+                        window.location.href = button.getAttribute('href');
+                    }
+                    // Если токен не валиден, то делаем новый access токен через refresh токен
+                    else{
+                        const refreshUrl = 'http://localhost:3000/API/refreshJwt';
+                        const response = await fetch(refreshUrl, {
+                            method: "GET",
+                            credentials: "include",
+
+                            headers: {
+                                "content-type": "application/json",
+                            },
+                        })
+
+                        // Если успешно обновлен
+                        if (response.ok) {
+                            const data = await response.json();
+                            localStorage.setItem('token', data.accessToken);
+                            window.location.href = button.getAttribute('href');
+                        }
+                        else{
+                            this.popUpLogInMessage()
+                        }
+                    }
+                }
+                catch(err) {
+                    console.log(err);
                 }
 
             })

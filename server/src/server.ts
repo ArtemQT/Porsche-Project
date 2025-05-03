@@ -2,10 +2,10 @@ import express from "express";
 
 import { usersRouter } from "./routers/usersRoutes"
 import { testRouter } from "./routers/testGelAllUsersRoute";
-import { refreshTokenRouter } from "./routers/refreshRoute"
+import { refreshTokenRouter } from "./routers/refreshJwtRoute"
 import { carModelsRouter } from "./routers/carModelRoute"
 import { carReviewRouter } from "./routers/carOverviewRoute"
-
+import { verifyTokenRouter } from "./routers/verifyJwtRoute";
 //------------------------------------------------------------//
 
 import cookieParser from "cookie-parser";
@@ -23,14 +23,21 @@ server.use(express.urlencoded({ extended: true }))
 server.use(cookieParser())
 
 server.use('/API/auth', usersRouter)
-server.use('/API/users', testRouter)
-server.use('/API/refresh', refreshTokenRouter)
+
+// Маршруты для получения моделей и конкретной модели
 server.use('/API/carModels', carModelsRouter)
 server.use('/API/carReview', carReviewRouter)
+
+// Маршруты для токенов
+server.use('/API/refreshJwt', refreshTokenRouter)
+server.use('/API/verifyJwt', verifyTokenRouter)
 
 server.listen(PORT, () => {
     console.log(`server listening on port ${PORT}`);
 });
+
+
+// server.use('/API/users', testRouter)
 
 
 
