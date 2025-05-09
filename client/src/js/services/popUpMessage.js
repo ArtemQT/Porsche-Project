@@ -49,7 +49,7 @@ export class PopUpMessage {
 
             setTimeout(()=>{
                 document.body.removeChild(this.messageElement);
-            }, 500)
+            }, 1000)
         }
     }
 

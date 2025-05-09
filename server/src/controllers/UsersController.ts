@@ -80,14 +80,15 @@ export class AuthenticateUser {
             }
 
             const user: RowDataPacket = candidate[0];
+            console.log(user.id);
             // return a JWT token and refresh JWT token
             const accessToken: string = jwt.sign(
-                {"userName": user.user_name},
+                {userName: user.user_name, user_id: user.id},
                 process.env.ACCESS_TOKEN_SECRET!,
                 {expiresIn: "60s"}
             )
             const refreshToken: string = jwt.sign(
-                {"userName": user.user_name},
+                {userName: user.user_name, user_id: user.id},
                 process.env.REFRESH_TOKEN_SECRET!,
                 {expiresIn: "7d"}
             )
@@ -103,6 +104,7 @@ export class AuthenticateUser {
 
             await TokenModel.updateRefreshToken(refreshToken, user.id);
             res.status(200).json({
+                userID: user.id,
                 accessToken,
                 message: `Authorization successful\n Welcome ${user.user_name}`,
             })

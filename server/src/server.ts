@@ -6,6 +6,8 @@ import { refreshTokenRouter } from "./routers/refreshJwtRoute"
 import { carModelsRouter } from "./routers/carModelRoute"
 import { carReviewRouter } from "./routers/carOverviewRoute"
 import { verifyTokenRouter } from "./routers/verifyJwtRoute";
+import { usersBasketRouter } from "./routers/usersBasketRoute"
+
 //------------------------------------------------------------//
 
 import cookieParser from "cookie-parser";
@@ -31,6 +33,9 @@ server.use('/API/carReview', carReviewRouter)
 // Маршруты для токенов
 server.use('/API/refreshJwt', refreshTokenRouter)
 server.use('/API/verifyJwt', verifyTokenRouter)
+
+// Маршруты для корзины
+server.use('/API/userBasket', usersBasketRouter)
 
 server.listen(PORT, () => {
     console.log(`server listening on port ${PORT}`);

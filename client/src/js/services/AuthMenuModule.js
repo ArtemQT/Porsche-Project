@@ -57,14 +57,10 @@ export class AuthMenu{
 
     static isAuthenticated(){
         const token = localStorage.getItem('token');
-        if (!token) {
-            return false;
-        }
-        return true;
-
+        return token;
     }
 
-    static async logOut(e){
+    static async logOut(){
         try{
             const response = await fetch("http://localhost:3000/API/auth/logout", {
                 method: 'GET',
@@ -77,6 +73,11 @@ export class AuthMenu{
             console.log(body);
             if (response.ok){
                 localStorage.removeItem('token');
+                localStorage.removeItem('userID');
+            }
+            debugger;
+            if (window.location.pathname.endsWith('modelReview.html') || (window.location.pathname.endsWith('basket.html'))) {
+                setTimeout(() => window.location.href = 'landing.html', 2000);
             }
         }
         catch (err) {

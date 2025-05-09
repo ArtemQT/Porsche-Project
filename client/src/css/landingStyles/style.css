@@ -50,6 +50,22 @@
     font-display: swap;
 }
 
+
+@font-face {
+    font-family: 'Futura New';
+    src: url('../../../public/assetsModelReview/fonts/FuturaNewLight-Reg.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+
+}
+@font-face {
+    font-family: 'Futura New Book';
+    src: url('../../../public/assetsModelReview/fonts/FuturaNewBook-Reg.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 /*--------------------------------------------*/
 /*                 Общие стили                */
 /*--------------------------------------------*/
@@ -179,7 +195,7 @@ a{
 
 .introCars{
     background-color: #f5f5f5  ;
-    border-bottom: 1px solid #898C94;
+    margin-bottom: 200px;
 }
 
 .introCars__container{
@@ -451,13 +467,52 @@ a{
             fadeIn 1.5s ease forwards 0.5s;
 }
 
+/*--------------------------------------------*/
 .modelRow__title{
-    font-family: 'Manrope', sans-serif;
-    font-size: 40px;
+    font-family: 'Manrope', cursive;
+    font-weight: 700;
+    font-size: 60px;
     letter-spacing: 3px;
 
     margin-bottom: 100px;
+
+    transition: 1.2s;
 }
+.modelRow__title.modelRow__title-inverse{
+    color: #FFFFFF;
+
+    background: linear-gradient(90deg, #FFFFFF, #FFFFFF 45%, #ff0000 50%, #FFFFFF 55%, #FFFFFF);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: gradientShift 2s ease infinite alternate;
+}
+
+body{
+    transition: 1.2s ;
+}
+body.body-inverse{
+    background-color: #000000;
+}
+
+.introCars{
+    transition: 1.5s;
+}
+.introCars.introCars-inverse{
+    background-color: #000000;
+}
+
+.findCar__container{
+    border: 3px solid #FFFFFF;
+    transition: 1.5s;
+}
+.findCar__container.find-car-inverse{
+    border-color: #FFFFFF;
+}
+
+/*--------------------------------------------*/
 
 .modelRow__list{
     width: 100%;
@@ -466,63 +521,80 @@ a{
     flex-wrap: wrap;
     justify-content: center;
 
-    column-gap: 200px;
+    column-gap: 50px;
 }
 
-.modelRow__list-item{
-    width: 600px;
-    height: 800px;
-
-    border-radius: 50px;
-}
-
-.modelRow__list-item:nth-child(1){
-    background: url("../../../public/assetsMainPage/images/model-row-backgrounds/911-background.avif") center/cover no-repeat;
-}
-
-.modelRow__list-item:nth-child(2){
-    background: url("../../../public/assetsMainPage/images/model-row-backgrounds/718-background.avif") center/cover no-repeat;
-}
-
-.modelRow__list-item:hover {
+.modelRow__item{
     position: relative;
-    overflow: hidden;
-}
-.modelRow__list-item:hover::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 60%;
-    height: 100%;
-    background: linear-gradient(90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent);
-    transform: skewX(-25deg);
-    animation: shine 1.5s ease-out;
-}
-@keyframes shine {
-    100% { left: 150%; }
-}
+    z-index: 1;
 
-.modelRow__list-item-icon{
-    align-self: start;
-    width: 100px;
-    height: 40px;
+    width: 850px;
+    height: 600px;
+    border-radius: 30px;
+    padding: 15px 50px 30px 50px;
 
-    margin-bottom: 10px;
-}
 
-.modelRow__list-item-container{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: space-between;
 
-    padding: 30px;
+    transition: 0.6s;
 }
 
-.modelRow__list-item__fuelType{
+.modelRow__item:hover{
+    box-shadow: 0px 5px 25px rgba(255, 255, 255);
+
+}
+
+.modelRow__item__info-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    z-index: 1;
+}
+
+.modelRow__item-preview{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    border-radius: 30px;
+    transition: 0.5s;
+}
+
+.modelRow__item-video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+    object-fit: cover;
+    border-radius: 30px;
+    transition: 0.5s;
+}
+
+.modelRow__item:hover .modelRow__item-preview {
+    opacity: 0;
+}
+.modelRow__item:hover .modelRow__item-video{
+    opacity: 1;
+}
+
+.modelRow__item-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1;
+
+}
+.modelRow__item__info-fuel{
     align-self: start;
     display: inline-block;
     padding: 5px;
@@ -530,47 +602,53 @@ a{
 
     font-family: 'Manrope', sans-serif;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 700;
     color: #FFFFFF;
     letter-spacing: 1.5px;
 
-    background-color: #434141;
+    background-color: #898C94;
 
-    margin-bottom: 480px;
+    margin-bottom: 30px;
+
 }
+.modelRow__item__info-description{
+    width: 460px;
 
-.modelRow__list-item-description{
-    font-family: 'Manrope', sans-serif;
-    font-size: 28px;
-    font-weight: 300;
+    font-family: 'Futura New Book', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
     color: #FFFFFF;
 
     letter-spacing: 1.5px;
     line-height: 1.2;
-
-    margin-bottom: 40px;
 }
 
 .modelRow__list-item-button{
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding-block: 10px ;
-
-    font-family: 'Manrope', sans-serif;
-    font-size: 24px;
-    font-weight: 300;
+    font-family: 'Futura New Book', cursive;
+    font-size: 22px;
+    letter-spacing: 1.5px;
     color: #FFFFFF;
 
-    border: 2px solid #FFFFFF;
-    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    column-gap: 10px;
+
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: 1px solid transparent;
 
     transition: 0.4s;
 }
-
 .modelRow__list-item-button:hover{
-    background: #2e2e2e;
+    border-color: #FFFFFF;
 }
+.modelRow__list-item-button > img{
+    transition: 0.75s;
+}
+.modelRow__list-item-button:hover > img{
+    transform: rotate(720deg);
+}
+
 
 /*--------------------------------------------*/
 /*--------------------------------------------*/
@@ -589,7 +667,7 @@ a{
     max-width: 1500px;
 
     margin-inline: auto;
-    margin-bottom: 200px;
+    margin-bottom: 75px;
     padding-inline: 0;
 
     border-radius: 30px;

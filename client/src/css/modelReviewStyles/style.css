@@ -1,3 +1,5 @@
+@import "../popUpMessage.css";
+
 @import url('../header.css');
 
 @font-face {
@@ -46,6 +48,7 @@ body{
     background-color: #F8F8F8;
 
     overflow-x: hidden;
+
 }
 
 .container{
@@ -57,6 +60,7 @@ a{
     text-decoration: none;
     color: #000000;
 }
+
 
 /*--------------------------------------------*/
 /*         стили CAR-REVIEW SECTION           */
@@ -96,24 +100,17 @@ a{
 .review__header-link:hover{
     border-color: #898C94;
 }
-
 .review__header-img-arrow{
     transition: 0.4s;
 }
 .review__header-link:hover .review__header-img-arrow{
     transform: translateX(-50px);
 }
-
 .review__header-img-save{
     transition: 1s;
 }
 .review__header-link:hover .review__header-img-save{
     transform: rotate(720deg);
-}
-
-
-.review__header-link{
-
 }
 
 .review__header-title{
@@ -264,7 +261,7 @@ a{
 }
 
 .constructor__swiper-wrapper{
-    display: none;
+    display: flex;
 
     position: relative;
     z-index: 1000;
@@ -274,10 +271,10 @@ a{
     margin-bottom: 50px;
 
 }
-
-.active-swiper{
-    display: flex;
+.constructor__swiper-wrapper.hidden{
+    display: none;
 }
+
 
 .constructor__swiper-slide{
 

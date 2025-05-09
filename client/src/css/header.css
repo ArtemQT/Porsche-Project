@@ -1,3 +1,6 @@
+
+
+
 /*--------------------------------------------*/
 /*--------------------------------------------*/
 /*             Стили для HEADER               */
@@ -83,11 +86,13 @@
     justify-content: center;
     align-items: center;
 
-    transition: background-color 0.4s;
+    transition: 0.4s;
     z-index: 1;
 }
 .header__user-button:hover, .header__basket-button:hover{
     background-color: #FFFFFF;
+    transform: scale(1.2);
+    cursor: pointer;
 }
 
 .header__nav-link{

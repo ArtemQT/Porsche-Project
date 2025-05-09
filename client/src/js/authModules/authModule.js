@@ -59,6 +59,7 @@ const authModule = () => {
                 )
 
                 localStorage.setItem('token', userData.accessToken);
+                localStorage.setItem('userID', userData.userID);
                 setTimeout(() => {
                     window.history.back();
                 }, 3000);

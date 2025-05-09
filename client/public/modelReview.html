@@ -12,6 +12,11 @@
 
     <link rel="icon" href="favicon/porsche.svg" type="image/x-icon">
     <title>Porsche</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+
+    <script type="module" src="../src/js/carReviewModules/modelReview.js" defer></script>
+    <script type="module" src="../src/js/carReviewModules/sliderReview.js" defer></script>
 </head>
 <body>
     <header id="header" class="header">
@@ -355,17 +360,17 @@
                                     <div class="interior__swiper-slide-price swiper-slide-price">
                                         + <strong><span class="interior-price">6400</span></strong> £
                                     </div>
-                                    <div class="interior__swiper-slide-picture">
-
+                                    <figure class="interior__swiper-slide-picture">
                                         <img src="assetsModelReview/images/911/interior/red-interior.jfif"
                                              alt=""
                                              width="400"
                                              height="180"
                                         >
-                                    </div>
-                                    <div class="interior__swiper-slide-picture-info swiper-slide-info">
-                                        Red Leather interior
-                                    </div>
+                                        <figcaption class="interior__swiper-slide-picture-info swiper-slide-info">
+                                            Red Leather interior
+                                        </figcaption>
+                                    </figure>
+
                                 </article>
                                 <article class="interior__swiper-slide swiper-slide interior-color-swiper-slide">
                                     <div class="interior__swiper-slide-price swiper-slide-price">
@@ -409,10 +414,11 @@
                                              width="400"
                                              height="180"
                                         >
+                                        <figcaption class="interior__swiper-slide-picture-info swiper-slide-info">
+                                            Mahogany Interior
+                                        </figcaption>
                                     </figure>
-                                    <figcaption class="interior__swiper-slide-picture-info swiper-slide-info">
-                                        Mahogany Interior
-                                    </figcaption>
+
                                 </article>
                             </div>
 
@@ -505,10 +511,10 @@
                                         Base Exhaust System / No Additional Cost
                                         <span class="exhaust-price visually-hidden">0</span>
                                     </div>
-                                    <h4 class="package__swiper-slide-title">
+                                    <h4 class="exhaust__swiper-slide-title package__swiper-slide-title">
                                         Standard Exhaust System
                                     </h4>
-                                    <p class="package__swiper-slide-description">
+                                    <p class="exhaust__swiper-slide-description package__swiper-slide-description">
                                         Conventional factory exhaust system, balanced in sound and ecology.
                                         Provides a comfortable ride, not annoying in the city, suitable for everyday use.
                                         A practical choice for those who appreciate silence and economy.
@@ -518,10 +524,10 @@
                                     <div class="exhaust__swiper-slide-price swiper-slide-price">
                                         + <strong><span class="exhaust-price">4200</span></strong> £
                                     </div>
-                                    <h4 class="package__swiper-slide-title">
+                                    <h4 class="exhaust__swiper-slide-title package__swiper-slide-title">
                                         Sport Exhaust System
                                     </h4>
-                                    <p class="package__swiper-slide-description">
+                                    <p class="exhaust__swiper-slide-description package__swiper-slide-description">
                                         Equipped with controllable valves that open when driving actively.
                                         The sound is deeper, richer and more emotional.
                                         Ideal for those who want to hear the performance of the engine and get more pleasure from acceleration.
@@ -531,10 +537,10 @@
                                     <div class="exhaust__swiper-slide-price swiper-slide-price">
                                         + <strong><span class="exhaust-price">10200</span></strong> £
                                     </div>
-                                    <h4 class="package__swiper-slide-title">
+                                    <h4 class="exhaust__swiper-slide-title package__swiper-slide-title">
                                         Titan Performance Exhaust System
                                     </h4>
-                                    <p class="package__swiper-slide-description">
+                                    <p class="exhaust__swiper-slide-description package__swiper-slide-description">
                                         Titanium or lightweight sports system with maximum emphasis on sound and weight reduction.
                                         Provides aggressive sound at high revs and emphasizes the racing character of the car.
                                         For enthusiasts and drive enthusiasts.
@@ -687,11 +693,6 @@
             </button>
         </div>
     </main>
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <script type="module" src="../src/js/carReviewModules/modelReview.js"></script>
-    <script src="../src/js/carReviewModules/sliderReview.js"></script>
 
 </body>
 </html>

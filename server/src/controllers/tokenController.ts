@@ -38,7 +38,7 @@ export class TokenController {
                     return;
                 }
                 const accessToken: string = jwt.sign(
-                    {"userName": decoded.userName},
+                    {userName: decoded.userName, user_id: decoded.user_id},
                     process.env.ACCESS_TOKEN_SECRET!,
                     { expiresIn: "60s" }
                 )

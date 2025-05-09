@@ -41,7 +41,7 @@ const handleConstructorControls = () => {
     })
 
     controlShowButton.addEventListener('click', () => {
-        constructorSwiperWrapper.classList.add('active-swiper');
+        constructorSwiperWrapper.classList.remove('hidden');
         paginationItemCollection[0].classList.add('active-bullet-item');
         constructorSwiper.slideTo(0);
 
@@ -61,7 +61,7 @@ const handleConstructorControls = () => {
             bulletButton.disabled = true;
         })
 
-        constructorSwiperWrapper.classList.remove('active-swiper');
+        constructorSwiperWrapper.classList.add('hidden');
 
     })
 }
@@ -91,6 +91,8 @@ function totalPriceControl(globalSwiper, priceSpanClass) {
     totalPriceElement.textContent = totalPriceData.toString();
 }
 
+
+
 // Слайдер ревью авто
 new Swiper('.review__swiper', {
     loop: true,
@@ -103,7 +105,7 @@ new Swiper('.review__swiper', {
 })
 
 // Слайдер и конструктора
-const constructorSwiper = new Swiper('.constructor__swiper', {
+export const constructorSwiper = new Swiper('.constructor__swiper', {
     loop: false,
 
     initialSlide: 0,
@@ -116,9 +118,8 @@ const constructorSwiper = new Swiper('.constructor__swiper', {
 })
 handleConstructorPagination()
 handleConstructorControls()
-
 // Слайдер экстерьера
-const exteriorSwiper = new Swiper('.color__swiper', {
+export const exteriorSwiper = new Swiper('.color__swiper', {
     loop: false,
 
     initialSlide: 0,
@@ -148,7 +149,7 @@ const exteriorSwiper = new Swiper('.color__swiper', {
 })
 
 // Cлайдер дисков
-const wheelsSwiper = new Swiper('.wheels__swiper', {
+export const wheelsSwiper = new Swiper('.wheels__swiper', {
     loop: false,
 
     initialSlide: 0,
@@ -177,7 +178,7 @@ const wheelsSwiper = new Swiper('.wheels__swiper', {
 })
 
 // Cлайдер интерьера
-const interiorSwiper = new Swiper('.interior__swiper', {
+export const interiorSwiper = new Swiper('.interior__swiper', {
     loop: false,
 
     initialSlide: 0,
@@ -206,7 +207,7 @@ const interiorSwiper = new Swiper('.interior__swiper', {
 })
 
 // Слайдер пакетов
-const packageSwiper = new Swiper('.package__swiper', {
+export const packageSwiper = new Swiper('.package__swiper', {
     loop: false,
 
     initialSlide: 0,
@@ -236,7 +237,7 @@ const packageSwiper = new Swiper('.package__swiper', {
 })
 
 // Слайдер выхлопов
-const exhaustSwiper = new Swiper('.exhaust__swiper', {
+export const exhaustSwiper = new Swiper('.exhaust__swiper', {
     loop: false,
 
     initialSlide: 0,
@@ -264,4 +265,7 @@ const exhaustSwiper = new Swiper('.exhaust__swiper', {
         }
     }
 })
+
+const constructorSwiperWrapper = document.querySelector('.constructor__swiper-wrapper');
+constructorSwiperWrapper.classList.add('hidden');
 

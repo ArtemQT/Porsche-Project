@@ -16,7 +16,6 @@ async function createConnToDataBase() {
             port: 3306,
             database: process.env.DB_NAME,
         });
-        console.log('server successfully connected to database');
         return connection;
     }
     catch (err) {

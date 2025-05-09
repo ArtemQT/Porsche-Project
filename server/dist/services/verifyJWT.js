@@ -7,6 +7,8 @@ exports.verifyJwt = void 0;
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
+// HTTP 401: клиент не прошёл аутентификацию, и подразумевает, что успешный ответ может быть возвращён после действительной аутентификации,
+// HTTP 403: клиенту не разрешён доступ к ресурсу, несмотря на предоставление данных
 const verifyJwt = (req, res, next) => {
     const authHeader = req.headers.authorization;
     // Если не отправлен заголовок authorization

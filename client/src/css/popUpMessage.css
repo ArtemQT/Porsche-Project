@@ -9,7 +9,8 @@
 .auth-popup{
     position: fixed;
     top: 100px;
-    right: -600px;
+    right: -1200px;
+    z-index: 9999999;
 
     display: inline-flex;
     align-items: center;
@@ -24,11 +25,11 @@
     font-family: 'Futura New Book', sans-serif;
     color: #fff;
 
-    transition: transform 0.5s ease;
+    transition: transform 1s ease;
 }
 
 .auth-popup.show{
-    transform: translateX(-610px);
+    transform: translateX(-1210px);
 }
 
 .auth-popup__title{

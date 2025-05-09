@@ -72,19 +72,21 @@ class AuthenticateUser {
                 return;
             }
             const user = candidate[0];
+            console.log(user.id);
             // return a JWT token and refresh JWT token
-            const accessToken = jsonwebtoken_1.default.sign({ "userName": user.user_name }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "60s" });
-            const refreshToken = jsonwebtoken_1.default.sign({ "userName": user.user_name }, process.env.REFRESH_TOKEN_SECRET, { expiresIn: "7d" });
+            const accessToken = jsonwebtoken_1.default.sign({ userName: user.user_name, user_id: user.id }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "60s" });
+            const refreshToken = jsonwebtoken_1.default.sign({ userName: user.user_name, user_id: user.id }, process.env.REFRESH_TOKEN_SECRET, { expiresIn: "7d" });
             console.log('saving jwt');
             // saving in cookies JWT refresh
             res.cookie('jwt', refreshToken, {
                 httpOnly: true,
                 secure: false,
-                maxAge: 24 * 60 * 60 * 1000
+                maxAge: 7 * 24 * 60 * 60 * 1000
             });
             console.log('jwt saved in cookies');
             await tokenModel_1.TokenModel.updateRefreshToken(refreshToken, user.id);
             res.status(200).json({
+                userID: user.id,
                 accessToken,
                 message: `Authorization successful\n Welcome ${user.user_name}`,
             });

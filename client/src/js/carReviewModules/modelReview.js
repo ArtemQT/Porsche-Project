@@ -21,7 +21,10 @@ class ModelReview {
     }
 
     async innerCarData(){
+
         const carData = await this.getCar();
+
+        localStorage.setItem('modelID', carData.id)
 
         // Название модели porsche
         this.reviewCarNameTitle.textContent = `${carData.model_series} ${carData.model_name}`;
@@ -68,12 +71,13 @@ class ModelReview {
     }
 }
 
-
-
 import { AuthMenu } from "../services/AuthMenuModule.js";
+import { UsersBasket } from "../services/usersBasketService.js"
 
 AuthMenu.AuthMenuInit()
-
 new ModelReview()
+SaveConfiguration.handleSaveButton()
+new UsersBasket();
+
 
 

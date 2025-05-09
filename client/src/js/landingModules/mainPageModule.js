@@ -1,8 +1,11 @@
 import { AudioPlayer } from "./audioRoadModule.js";
 import { AuthMenu } from "../services/AuthMenuModule.js";
 import { PopUpMessage } from "../services/popUpMessage.js";
+import { UsersBasket } from "../services/usersBasketService.js"
 
 AuthMenu.AuthMenuInit();
+new UsersBasket();
+
 const player_GT3_rs = new AudioPlayer(
     {
         container: '.introCars__container-car-audio-player',

@@ -1,7 +1,10 @@
 import { AuthMenu } from "../services/AuthMenuModule.js";
 import { PopUpMessage } from "../services/popUpMessage.js";
+import {TokenService} from "../services/tokenService.js";
+import { UsersBasket } from "../services/usersBasketService.js"
 
 AuthMenu.AuthMenuInit()
+new UsersBasket();
 
 
 class ModelOverview {
@@ -13,13 +16,6 @@ class ModelOverview {
     constructor() {
         this.popUpMessage = new PopUpMessage();
         this.setHandlers();
-    }
-
-    popUpLogInMessage() {
-        this.popUpMessage.show(
-            "Authorization required",
-            "To continue, you must log in."
-        )
     }
 
     async setHandlers(){
@@ -126,21 +122,16 @@ class ModelOverview {
                 // Проверка существования токена
                 const token = localStorage.getItem('token');
                 if(!token){
-                    this.popUpLogInMessage()
+                    this.popUpMessage.show(
+                        "Authorization required",
+                        "To continue, you must log in."
+                    )
                     return;
                 }
 
                 // Верификация токена
                 try{
-                    const verifyUrl = 'http://localhost:3000/API/verifyJwt'
-
-                    const response = await fetch(verifyUrl, {
-                        method: "GET",
-                        headers: {
-                            "content-type": "application/json",
-                            Authorization: `Bearer ${token}`
-                        }
-                    })
+                    const response = await TokenService.verifyToken(token);
 
                     // Если токен валиден
                     if (response.ok) {
@@ -148,15 +139,7 @@ class ModelOverview {
                     }
                     // Если токен не валиден, то делаем новый access токен через refresh токен
                     else{
-                        const refreshUrl = 'http://localhost:3000/API/refreshJwt';
-                        const response = await fetch(refreshUrl, {
-                            method: "GET",
-                            credentials: "include",
-
-                            headers: {
-                                "content-type": "application/json",
-                            },
-                        })
+                        const response = await TokenService.refreshToken();
 
                         // Если успешно обновлен
                         if (response.ok) {
@@ -164,8 +147,13 @@ class ModelOverview {
                             localStorage.setItem('token', data.accessToken);
                             window.location.href = button.getAttribute('href');
                         }
+                        // Если истек refresh токен
                         else{
-                            this.popUpLogInMessage()
+                            this.popUpMessage.show(
+                                "Session expired\n",
+                                "Your session has expired. Please log in again."
+                            )
+                            setTimeout(AuthMenu.logOut, 2000)
                         }
                     }
                 }

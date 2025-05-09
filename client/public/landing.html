@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../src/css/reset.css">
     <link rel="stylesheet" href="../src/css/landingStyles/style.css">
 
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="icon" href="favicon/porsche.svg" type="image/x-icon">
 
@@ -66,14 +67,14 @@
                         </div>
                     </li>
                     <li class="header__list-icons-item">
-                        <button class="header__basket-button" title="Корзина">
+                        <a class="header__basket-button" title="Корзина">
                             <img src="assetsMainPage/icons/basket.svg"
                                  alt=""
                                  loading="lazy"
                                  width="25"
                                  height="25"
                             >
-                        </button>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -97,9 +98,6 @@
                         Just the perfect symbiosis of power and elegance,<br/>
                         waiting to ignite your next adventure.
                     </p>
-<!--                    <a class="introCars__container-button link-toConfigure">-->
-<!--                        Configure Your Porsche-->
-<!--                    </a>-->
                     <div class="introCars__quote-wrapper">
                         <q class="founder-quote__text">
                             <em>I couldn’t find the perfect car, so I built it myself.</em>
@@ -110,7 +108,7 @@
 
                 <div class="introCars__container-car">
                     <div class="introCars__container-car__caption h2-title">
-                        The porsche gt3 rs: <br/>
+                        The porsche gt3: <br/>
                         our ultimate race machine
                     </div>
 
@@ -118,22 +116,22 @@
                         <div class="introCars__swiper-wrapper swiper-wrapper">
                             <div class="introCars__swiper-slide swiper-slide">
                                 <div class="introCars__swiper-slide-picture">
-                                    <img src="assetsMainPage/introCars-models/porsche-gt3-rs(1).jfif" alt="">
+                                    <img src="assetsMainPage/introCars-models/porsche-gt3(1).jfif" alt="">
                                 </div>
                             </div>
                             <div class="introCars__swiper-slide swiper-slide">
                                 <div class="introCars__swiper-slide-picture">
-                                    <img src="assetsMainPage/introCars-models/porsche-gt3-rs(2).jfif" alt="">
+                                    <img src="assetsMainPage/introCars-models/porsche-gt3(2).jfif" alt="">
                                 </div>
                             </div>
                             <div class="introCars__swiper-slide swiper-slide">
                                 <div class="introCars__swiper-slide-picture">
-                                    <img src="assetsMainPage/introCars-models/porsche-gt3-rs(3).jfif" alt="">
+                                    <img src="assetsMainPage/introCars-models/porsche-gt3(3).jfif" alt="">
                                 </div>
                             </div>
                             <div class="introCars__swiper-slide swiper-slide">
                                 <div class="introCars__swiper-slide-picture">
-                                    <img src="assetsMainPage/introCars-models/porsche-gt3-rs(4).jfif" alt="">
+                                    <img src="assetsMainPage/introCars-models/porsche-gt3(4).jfif" alt="">
                                 </div>
                             </div>
                         </div>
@@ -185,68 +183,17 @@
                         </button>
                     </div>
 
-                    <a href="modelReview.html?model_name=GT3 RS" class="introCars__car-order-button link-toConfigure">
-                    Configure Your GT-3 RS
+                    <a href="modelReview.html?model_name=GT3" class="introCars__car-order-button link-toConfigure">
+                    Configure Your GT-3
                 </a>
                 </div>
-            </div>
-        </section>
-
-        <section class="modelRow">
-            <div class="modelRow__container container">
-                <h2 class="modelRow__title">
-                    Model row
-                </h2>
-                <ul class="modelRow__list" id="models">
-                    <li class="modelRow__list-item">
-                        <div class="modelRow__list-item-container">
-                            <div class="modelRow__list-item-icon">
-                                <img src="assetsMainPage/icons/911-icon.svg"
-                                     alt=""
-                                     width="100"
-                                     height="40"
-                                >
-                            </div>
-                            <div class="modelRow__list-item__fuelType">
-                                Petrol
-                            </div>
-                            <p class="modelRow__list-item-description">
-                                Sports car icon with rear-mounted engine and maximum performance
-                            </p>
-                            <a href="modelOverview.html?model=911" class="modelRow__list-item-button">
-                                All 911 models
-                            </a>
-                        </div>
-                    </li>
-                    <li class="modelRow__list-item">
-                        <div class="modelRow__list-item-container">
-                            <div class="modelRow__list-item-icon">
-                                <img src="assetsMainPage/icons/718-icon.svg"
-                                     alt=""
-                                     width="100"
-                                     height="40"
-                                >
-                            </div>
-                            <div class="modelRow__list-item__fuelType">
-                                Petrol
-                            </div>
-
-                            <p class="modelRow__list-item-description">
-                                Two-seater with powerful dynamics thanks to the central engine location
-                            </p>
-                            <a href="modelOverview.html?model=718" class="modelRow__list-item-button">
-                                All 718 models
-                            </a>
-                        </div>
-                    </li>
-                </ul>
             </div>
         </section>
 
         <section class="findCar">
             <div class="findCar__container container" id="Porsche_Finder">
                 <div class="findCar__container-image">
-                    <img src="assetsMainPage/images/find-car-section-img.avif" alt=""
+                    <img src="assetsMainPage/images/find-car-section-img.jpg" alt=""
                          loading="lazy"
                     >
                 </div>
@@ -265,6 +212,132 @@
                 </div>
             </div>
         </section>
+
+        <section class="modelRow">
+            <div class="modelRow__container">
+                <h2 class="modelRow__title modelRow__title-inverse">
+                    Your Porsche journey starts here.
+                </h2>
+                <ul class="modelRow__list" id="models">
+<!--                    <li class="modelRow__list-item">-->
+<!--                        <div class="modelRow__list-item-container">-->
+<!--                            <div class="modelRow__list-item-icon">-->
+<!--                                <img src="assetsMainPage/icons/911-icon.svg"-->
+<!--                                     alt=""-->
+<!--                                     width="100"-->
+<!--                                     height="40"-->
+<!--                                >-->
+<!--                            </div>-->
+<!--                            <div class="modelRow__list-item__fuelType">-->
+<!--                                Petrol-->
+<!--                            </div>-->
+<!--                            <p class="modelRow__list-item-description">-->
+<!--                                Sports car icon with rear-mounted engine and maximum performance-->
+<!--                            </p>-->
+<!--                            <a href="modelOverview.html?model=911" class="modelRow__list-item-button">-->
+<!--                                All 911 models-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                    </li>-->
+<!--                    <li class="modelRow__list-item">-->
+<!--                        <div class="modelRow__list-item-container">-->
+<!--                            <div class="modelRow__list-item-icon">-->
+<!--                                <img src="assetsMainPage/icons/718-icon.svg"-->
+<!--                                     alt=""-->
+<!--                                     width="100"-->
+<!--                                     height="40"-->
+<!--                                >-->
+<!--                            </div>-->
+<!--                            <div class="modelRow__list-item__fuelType">-->
+<!--                                Petrol-->
+<!--                            </div>-->
+
+<!--                            <p class="modelRow__list-item-description">-->
+<!--                                Two-seater with powerful dynamics thanks to the central engine location-->
+<!--                            </p>-->
+<!--                            <a href="modelOverview.html?model=718" class="modelRow__list-item-button">-->
+<!--                                All 718 models-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                    </li>-->
+
+
+                    <li class="modelRow__item">
+                        <img src="./assetsMainPage/modelRow/911-preview.jfif" alt=""
+                        class="modelRow__item-preview"
+                        >
+
+                        <video class="modelRow__item-video" muted loop>
+                            <source src="./assetsMainPage/modelRow/911.mp4" type="video/mp4">
+                        </video>
+
+                        <div class="modelRow__item-img">
+                            <img src="assetsMainPage/icons/911-icon.svg"
+                                 alt=""
+                                 width="100"
+                                 height="40"
+                            >
+                        </div>
+
+                        <div class="modelRow__item__info-wrapper">
+                            <div class="modelRow__item__info">
+                                <div class="modelRow__item__info-fuel">
+                                    Petrol
+                                </div>
+                                <p class="modelRow__item__info-description">
+                                    Sports car icon with rear-mounted engine and maximum performance
+                                </p>
+                            </div>
+
+                            <a href="modelOverview.html?model=911" class="modelRow__list-item-button">
+                                All 911 models
+                                <img src="./assetsMainPage/modelRow/up-arrow.svg" alt=""
+                                     width="40"
+                                     height="40"
+                                >
+                            </a>
+                        </div>
+                    </li>
+                    <li class="modelRow__item">
+                        <img src="./assetsMainPage/modelRow/718-preview.jfif" alt=""
+                             class="modelRow__item-preview"
+                        >
+
+                        <video class="modelRow__item-video" muted loop>
+                            <source src="./assetsMainPage/modelRow/718.mp4" type="video/mp4">
+                        </video>
+
+                        <div class="modelRow__item-img">
+                            <img src="assetsMainPage/icons/718-icon.svg"
+                                 alt=""
+                                 width="100"
+                                 height="40"
+                            >
+                        </div>
+
+                        <div class="modelRow__item__info-wrapper">
+                            <div class="modelRow__item__info">
+                                <div class="modelRow__item__info-fuel">
+                                    Petrol
+                                </div>
+                                <p class="modelRow__item__info-description">
+                                    Two-seater with powerful dynamics thanks to the central engine location
+                                </p>
+                            </div>
+
+                            <a href="modelOverview.html?model=718" class="modelRow__list-item-button">
+                                All 718 models
+                                <img src="./assetsMainPage/modelRow/up-arrow.svg" alt=""
+                                     width="40"
+                                     height="40"
+                                >
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
 
         <section class="contacts">
 
@@ -420,6 +493,8 @@
     <script type="module" src="../src/js/landingModules/sliderIntro.js"></script>
     <script type="module" src="../src/js/landingModules/animateCountersModule.js"></script>
     <script type="module" src="../src/js/landingModules/audioRoadModule.js"></script>
+    <script type="module" src="../src/js/landingModules/animateRowSection.js"></script>
+
 
     <script src="https://unpkg.com/wavesurfer.js@7"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

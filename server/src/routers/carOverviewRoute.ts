@@ -1,7 +1,7 @@
 import express, {Router} from 'express';
-import {CarOverviewController} from '../controllers/carOverviewController';
+import {CarReviewController} from '../controllers/carReviewController';
 import { verifyJwt } from '../services/verifyJWT'
 
 export const carReviewRouter: Router = express.Router();
 
-carReviewRouter.get('/' ,CarOverviewController.getCar);
+carReviewRouter.get('/' ,CarReviewController.getCar);
