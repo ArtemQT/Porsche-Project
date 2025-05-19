@@ -62,16 +62,118 @@
         </div>
     </header>
 
-    <main class="main">
-        <section class="modelRow">
-            <div class="modelRow__container container">
-                <h2 class="modelRow-title"></h2>
+    <main class="main container">
+        <h1 class="main-title">
+            Review of models
+        </h1>
+        <div class="main__container">
+            <section class="filters">
+                <h2 class="visually-hidden">
+                    Porsche models filter
+                </h2>
+                <form class="filters__form">
+                    <fieldset class="filters__series">
+                        <legend class="filters__series-legend">Models</legend>
 
-                <ul class="modelRow__list">
-                </ul>
-            </div>
-        </section>
+                        <ul class="filters__series-list">
+                            <li class="filters__series-item">
+                                <label class="filters__series-label">
+                                    <input class="radio-series-box" type="radio" name="series" value="all" checked>
+                                    <span class="radio-custom-series-box"></span>
+                                    <span class="filters__series-label-span">All Models</span>
+                                </label>
+                            </li>
+                            <li class="filters__series-item">
+                                <label class="filters__series-label">
+                                    <input class="radio-series-box" type="radio" name="series" value="911">
+                                    <span class="radio-custom-series-box"></span>
+                                    <span class="filters__series-label-span">911 Models</span>
+                                </label>
 
+                                <ul class="filters__list hidden" data-js-subFilter="911">
+                                    <li class="filters__911-item">
+                                        <label class="filters__911-label">
+                                            <input class="radio-series-box" type="radio" name="911-type" value="all" checked>
+                                            <span class="radio-911-custom-series-box"></span>
+                                            <span class="filters__911-label-span">All 911 models</span>
+                                        </label>
+                                    </li>
+                                    <li class="filters__911-item">
+                                        <label class="filters__911-label">
+                                            <input class="radio-series-box" type="radio" name="911-type" value="Carrera">
+                                            <span class="radio-911-custom-series-box"></span>
+                                            <span class="filters__911-label-span">Carrera</span>
+                                        </label>
+                                    </li>
+                                    <li class="filters__911-item">
+                                        <label class="filters__911-label">
+                                            <input class="radio-series-box" type="radio" name="911-type" value="GT3">
+                                            <span class="radio-911-custom-series-box"></span>
+                                            <span class="filters__911-label-span">GT3</span>
+                                        </label>
+                                    </li>
+                                    <li class="filters__911-item">
+                                        <label class="filters__911-label">
+                                            <input class="radio-series-box" type="radio" name="911-type" value="Turbo">
+                                            <span class="radio-911-custom-series-box"></span>
+                                            <span class="filters__911-label-span">Turbo</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="filters__series-item">
+                                <label class="filters__series-label">
+                                    <input class="radio-series-box" type="radio" name="series" value="718">
+                                    <span class="radio-custom-series-box"></span>
+                                    <span class="filters__series-label-span">718 Models</span>
+                                </label>
+
+                                <ul class="filters__list hidden" data-js-subFilter="718">
+                                    <li class="filters__718-item">
+                                        <label class="filters__718-label">
+                                            <input class="radio-series-box" type="radio" name="718-type" value="all">
+                                            <span class="radio-718-custom-series-box"></span>
+                                            <span class="filters__718-label-span">All 718 Models</span>
+                                        </label>
+                                    </li>
+                                    <li class="filters__718-item">
+                                        <label class="filters__718-label">
+                                            <input class="radio-series-box" type="radio" name="718-type" value="Boxter">
+                                            <span class="radio-718-custom-series-box"></span>
+                                            <span class="filters__718-label-span">Boxter</span>
+                                        </label>
+                                    </li>
+                                    <li class="filters__718-item">
+                                        <label class="filters__718-label">
+                                            <input class="radio-series-box" type="radio" name="718-type" value="Cayman">
+                                            <span class="radio-718-custom-series-box"></span>
+                                            <span class="filters__718-label-span">Cayman</span>
+                                        </label>
+                                    </li>
+                                    <li class="filters__718-item">
+                                        <label class="filters__718-label">
+                                            <input class="radio-series-box" type="radio" name="718-type" value="Spyder">
+                                            <span class="radio-718-custom-series-box"></span>
+                                            <span class="filters__718-label-span">Spyder</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </fieldset>
+
+                </form>
+            </section>
+
+            <section class="modelRow">
+                <div class="modelRow__container">
+                    <ul class="modelRow__list">
+                        <h2 class="modelRow-title"></h2>
+                    </ul>
+                </div>
+            </section>
+        </div>
     </main>
     <footer id="footer" class="footer">
         <div class="contacts__container container">

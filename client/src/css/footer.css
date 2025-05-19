@@ -14,7 +14,7 @@
     align-items: flex-start;
 
     color: #FFFFFF;
-    padding-block: 50px;
+    padding-block: 50px; !important;
 
     animation: fadeIn 1.5s ease forwards 0.5s;
 }

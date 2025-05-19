@@ -1,4 +1,8 @@
 import { SaveConfiguration } from "./saveConfiguration.js";
+import { TokenService } from "../services/tokenService.js";
+import { PopUpMessage } from "../services/popUpMessage.js";
+
+
 export let BASE_PRICE = 0;
 
 class ModelReview {
@@ -10,6 +14,7 @@ class ModelReview {
     saveContainerPreviewImg = document.querySelector('.save-container__preview-img img');
 
     constructor() {
+        this.popUpMessage = new PopUpMessage();
         this.setHandlers();
         SaveConfiguration.handleConfigurationButtons()
     }
@@ -45,25 +50,69 @@ class ModelReview {
 
     }
     async getCar() {
-        const carModel = this.getModelName()
 
-        const url = `http://localhost:3000/API/carReview?model_name=${carModel}`;
-        try {
-            const response = await fetch(url, {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json",
+        const fetchAPI = async () => {
+            const carModel = this.getModelName()
+
+            const url = `http://localhost:3000/API/carReview?model_name=${carModel}`;
+            try {
+                const response = await fetch(url, {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                    }
+                });
+                if (response.ok) {
+                    const data = await response.json();
+                    return data[0];
                 }
-            });
-            if (response.ok) {
-                const data = await response.json();
-                return data[0];
+            }catch(err) {
+                console.log(err);
+                throw err;
             }
-        }catch(err) {
-            console.log(err);
-            throw err;
         }
 
+        // Проверка существования токена
+        const token = localStorage.getItem('token');
+        if(!token){
+            this.popUpMessage.show(
+                "Authorization required",
+                "To continue, you must log in."
+            )
+            return;
+        }
+
+        // Верификация токена
+        try{
+            const response = await TokenService.verifyToken(token);
+
+            // Если токен валиден
+            if (response.ok) {
+                return await fetchAPI();
+            }
+            // Если токен не валиден, то делаем новый access токен через refresh токен
+            else{
+                const response = await TokenService.refreshToken();
+
+                // Если успешно обновлен
+                if (response.ok) {
+                    const data = await response.json();
+                    localStorage.setItem('token', data.accessToken);
+                    return await fetchAPI();
+                }
+                // Если истек refresh токен
+                else{
+                    this.popUpMessage.show(
+                        "Session expired\n",
+                        "Your session has expired. Please log in again."
+                    )
+                    setTimeout(AuthMenu.logOut, 2000)
+                }
+            }
+        }
+        catch(err) {
+            console.log(err);
+        }
     }
     getModelName(){
         const URLParams = new URLSearchParams(window.location.search);

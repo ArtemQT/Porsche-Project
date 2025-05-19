@@ -51,7 +51,6 @@ const authModule = () => {
 
             if (response.ok){
                 const userData = await response.json();
-                console.log(userData);
 
                 popUpMessage.show(
                     "Authorization successful",
@@ -59,9 +58,8 @@ const authModule = () => {
                 )
 
                 localStorage.setItem('token', userData.accessToken);
-                localStorage.setItem('userID', userData.userID);
                 setTimeout(() => {
-                    window.history.back();
+                    window.location.href='landing.html';
                 }, 3000);
             }
             else{

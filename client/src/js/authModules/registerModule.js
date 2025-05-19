@@ -88,7 +88,7 @@ const submitForm = () => {
 
                 setTimeout(() => {
                     window.location.href = "auth.html";
-                }, 3000);
+                }, 4000);
             }
             else{
                 const errorData = await response.json();

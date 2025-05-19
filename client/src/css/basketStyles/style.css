@@ -102,11 +102,9 @@
 }
 
 body{
-    max-width: 100vw;
 
     color: #000000;
-    background-color: #EAEAEA;
-;
+    background-color: #EAEAEA;;
 
     font-weight: 400;
     font-size: 18px;
@@ -118,7 +116,7 @@ body{
 .container{
     max-width: 1800px;
     margin: 0 auto;
-    padding: 0 10px;
+    padding-inline: 10px;
 }
 
 a{
@@ -209,7 +207,12 @@ a{
     from { opacity: 0; transform: translateY(150px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+
 .basket__content{
+    display: grid;
+    grid-template-columns: 80% 20%;
+
     opacity: 0;
     transform: translateY(150px);
     animation: fadeIn 2s ease forwards 0.5s
@@ -218,16 +221,36 @@ a{
 .basket__list{
     display: flex;
     flex-direction: column;
-    row-gap: 50px;
+
+    border-top: 2px solid #F6F6F6;
+
 }
 
 .basket__list-item{
     display: flex;
-    column-gap: 100px;
+    justify-content: space-between;
     align-items: center;
 
     border-bottom: 2px solid #F6F6F6;
-    padding-block: 40px;
+    border-right: 2px solid #F6F6F6;
+
+    padding-block: 100px;
+    padding-right: 30px;
+
+    transition: 0.8s;
+
+}
+
+.basket__list-item:hover{
+    background: linear-gradient(135deg, #EAEAEA, #EAEAEA 52%, #FFFFFF 53%, #EAEAEA 54%, #EAEAEA);
+    background-size: 200% auto;
+
+    animation: gradientShiftListItem 2s ease-in-out infinite alternate-reverse ;
+}
+
+@keyframes gradientShiftListItem {
+    from { background-position: -50% }
+    to { background-position: 150% }
 }
 
 /*--------------------------------------------*/
@@ -331,11 +354,13 @@ a{
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
 /*--------------------------------------------*/
 /*--------------------------------------------*/
 /*          Стили для BASKET-CONFIG           */
 /*--------------------------------------------*/
 /*--------------------------------------------*/
+
 .basket__item-config-container{
     min-width: 0;
 
@@ -349,7 +374,7 @@ a{
 }
 
 .basket__config-swiper{
-    max-width: 550px;
+    max-width: 500px;
     max-height: 350px;
 
     background-color: #FFFFFF;
@@ -362,7 +387,7 @@ a{
 }
 
 .swiper-wrapper.basket__config-swiper-wrapper{
-    min-width: 550px;
+    min-width: 500px;
     min-height: 350px;
 
     display: flex;
@@ -420,7 +445,13 @@ a{
     transform: scale(1.3);
 }
 
+.wheels__swiper-slide-picture{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
+}
 /*--------------------------------------------*/
 
 .interior__swiper-slide-picture img{
@@ -469,7 +500,396 @@ a{
     line-height: 1.3;
 
     height: 150px;
-    max-width: 470px;
+    max-width: 400px;
     max-height: 150px;
     overflow: hidden;
+}
+
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+/*       Стили для BASKET__ITEM-INFO          */
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+.basket__item-info{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.basket__item-info-price-title{
+    font-family: "Futura New Book", sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+    letter-spacing: 1.5px;
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.basket__item-info-price{
+    align-self: start;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 350px;
+    height: 400px;
+    padding: 20px 35px;
+    margin-bottom: 60px;
+
+    filter: blur(5px);
+    border-radius: 30px;
+
+    background-color: #FAFAFA;
+
+    transition: 0.5s;
+
+}
+
+.basket__item-info-price:hover{
+    filter: blur(0px);
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 1);
+}
+
+.basket__price-list{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+
+    padding-bottom: 30px;
+    border-bottom: 1px solid #666666;
+}
+
+.basket__item-info-title{
+    color: #000;
+    font-family: "Futura New Book", cursive;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+
+    margin-bottom: 30px;
+}
+
+.basket__base-price-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.basket__base-price-title{
+    color: #000000;
+    font-family: "Futura New", cursive;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+    width: 170px;
+}
+
+.basket__base-price{
+    color: #000000;
+    font-family: "Futura New", cursive;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.basket__price-total{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.basket__total-price-title{
+    color: #000000;
+    font-family: "Futura New Book", cursive;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: normal;
+    width: 130px;
+}
+
+.basket__total-price{
+    color: #000000;
+    font-family: "Futura New", cursive;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.basket__item-delete-button{
+    font-family: "Futura New Book", cursive;
+    font-size: 22px;
+    font-weight: 500;
+
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+
+    border-radius: 30px;
+    padding-inline: 10px;
+    border: 2px solid transparent;
+
+    background-color: #000000;
+    color: #FFFFFF;
+
+    transition: 0.5s;
+}
+
+.basket__item-delete-button:hover{
+    border-color: #000000;
+    background-color: transparent;
+    color: #000000;
+}
+
+.basket__item-delete-button:after{
+    content: "";
+
+    position: relative;
+
+    display: block;
+    width: 100px;
+    height: 60px;
+
+    background: url("../../../public/assetsMainPage/icons/Porshe-icon-model.svg") center/cover no-repeat;
+
+    transition: 0.5s;
+}
+
+.basket__item-delete-button:hover:after{
+    transform: translateX(60px);
+}
+
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+/*          Стили для BASKET-RESUME           */
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+
+.basket__summary-wrapper{
+    border-right: 2px solid #F6F6F6;
+    border-top: 2px solid #F6F6F6;
+}
+
+.basket__summary{
+    position: sticky;
+    top: 30px;
+    bottom: -30px;
+
+    margin-block: 30px;
+    margin-inline: auto;
+    width: 300px;
+    border-radius: 30px;
+
+    max-height: 100vh;
+    overflow-y:auto;
+
+    padding: 25px;
+
+    background-color: #A9A9A9;
+
+    opacity: 0;
+    transform: translateY(150px);
+    animation: fadeIn 2s ease forwards 0.5s
+}
+
+.basket__summary-title{
+    color: #000;
+    font-family: "Futura New Book", cursive;
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+    line-height: 1.1;
+    text-align: center;
+
+    background: linear-gradient(90deg, #000, #3a3a3a 45%, #ff0000 50%, #3a3a3a 55%, #000);
+    background-size: 200% auto;
+    animation: gradientShift 1.2s ease-out infinite alternate;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+.basket__summary-list{
+    margin-top: 20px;
+
+    border-top: 2px solid #F6F6F6;
+    border-bottom: 2px solid #F6F6F6;
+
+}
+
+.basket__summary-item{
+    padding: 15px;
+    cursor: pointer;
+    transition: 0.8s;
+    border-bottom: 2px solid #FFFFFF;
+
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+
+}
+
+.basket__summary-item:hover{
+    border-left-color: #FFFFFF;
+    border-right-color: #FFFFFF;
+
+}
+
+.basket__summary-car{
+    text-align: center;
+    color: #000;
+    font-family: "Futura New Book", cursive;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+
+    margin-bottom: 15px;
+}
+
+.basket__summary-price{
+    color: #000;
+    font-family: "Futura New Book", cursive;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+.basket__summary-button{
+    color: #000;
+    font-family: "Futura New Book", cursive;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+    text-align: start;
+
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    transition: 0.4s;
+
+    margin-bottom: 10px;
+}
+
+.basket__summary-button:hover{
+    color: #666666;
+}
+.basket__summary-button > img{
+    transition: 1.5s
+}
+.basket__summary-button:hover > img{
+    transform: rotate(720deg);
+}
+
+
+.basket__summary-configuration-list{
+    padding: 10px;
+    border: 1px solid #F6F6F6;
+    border-radius: 15px;
+}
+
+.basket__summary-configuration-list.hidden{
+    display: none;
+}
+
+.basket__summary-configuration-list-item{
+    color: #000;
+    font-family: "Futura New Book", cursive;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+
+    border-bottom: 1px solid #F6F6F6;
+    padding-block: 5px;
+
+    transition: 0.4s;
+}
+
+.basket__summary-configuration-list-item:hover{
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+/*          Стили для EMPTY BASKET            */
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+
+.empty-basket-container{
+    display: flex;
+    align-items: center;
+    column-gap: 100px;
+
+    padding-block: 100px;
+}
+
+.empty-basket-title{
+    font-family: 'Futura New Book', sans-serif;
+    font-weight: 500;
+    font-size: 70px;
+    color: #000;
+    letter-spacing: 2.5px;
+    text-align: center;
+    width: fit-content;
+}
+
+.empty-basket-description{
+    font-family: 'Futura New Book', sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    color: #000;
+    letter-spacing: 1.5px;
+    text-align: center;
+    width: fit-content;
+}
+
+.empty-basket-link{
+    padding: 20px;
+    border: 2px solid #000000;
+    border-radius: 45px;
+
+    display: inline-flex;
+    column-gap: 30px;
+
+    font-family: 'Futura New Book', sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+    color: #000;
+    letter-spacing: 1.5px;
+
+    transition: 0.4s;
+}
+
+.empty-basket-link:hover{
+    border-color: transparent;
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.empty-basket-link img{
+    transition: 0.4s
+}
+
+.empty-basket-link:hover > img{
+    transform: translateX(80px);
 }

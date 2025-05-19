@@ -66,6 +66,22 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Futura New';
+    src: url('../../../public/assetsModelReview/fonts/FuturaNewLight-Reg.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+
+}
+@font-face {
+    font-family: 'Futura New Book';
+    src: url('../../../public/assetsModelReview/fonts/FuturaNewBook-Reg.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(150px); }
     to { opacity: 1; transform: translateY(0); }
@@ -110,6 +126,38 @@ a{
     text-decoration: none;
     color: #000000;
 }
+
+.main__container{
+    display: grid;
+    grid-template-columns: 20% 80%;
+
+    padding-block: 100px;
+
+}
+
+@keyframes gradientShift {
+    from {background-position: 0; }
+    to { background-position: 100% }
+}
+
+.main-title{
+    margin-top: 50px;
+    font-family: 'Futura New Book', cursive;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    font-size: 55px;
+    text-align: start;
+
+    background: linear-gradient(90deg, #000, #000 45%, #fff 50%, #000 55%, #000 100%);
+    background-size: 200% auto;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: gradientShift 2s ease infinite alternate;
+
+}
 /*--------------------------------------------*/
 /*--------------------------------------------*/
 /*          Стили modelRow SECTION            */
@@ -117,18 +165,17 @@ a{
 /*--------------------------------------------*/
 
 .modelRow-title{
-    font-family: 'Roboto Slab', sans-serif;
-    font-weight: 700;
-    font-size: 30px;
+    font-family: 'Futura New', cursive;
+    font-weight: 600;
     letter-spacing: 1.5px;
+    font-size: 30px;
 
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 /*--------------------------------------------*/
 .modelRow__container{
-    padding-block: 100px;
 
     opacity: 0;
     transform: translateY(150px);
@@ -138,10 +185,11 @@ a{
 .modelRow__list{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: start;
+    padding-left: 40px;
 
-    column-gap: 150px;
-    row-gap: 150px;
+    column-gap: 100px;
+    row-gap: 100px;
 }
 
 .modelRow__list-item{
@@ -251,3 +299,196 @@ a{
 }
 
 
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+/*          Стили Filters SECTION            */
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+.filters{
+    border-right: 1px solid #FFFFFF;
+    padding-right: 40px;
+}
+
+.filters__form{
+    opacity: 0;
+    transform: translateY(150px);
+    animation: fadeIn 2s ease forwards 0.5s;
+
+    position: sticky;
+    top: 30px;
+
+    background-color: #FFFFFF;
+    border-radius: 30px;
+    padding: 35px 30px;
+
+    border: 2px solid #666666 ;
+
+    transition: 0.3s;
+}
+.filters__form:hover{
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+}
+
+.filters__series-legend{
+    font-family: 'Futura New', cursive;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    font-size: 30px;
+
+    margin-bottom: 50px;
+    border-bottom: 3px solid #000000;
+}
+
+.filters__series-list{
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+
+    margin-left: 35px;
+}
+
+.filters__series-label{
+    position: relative;
+
+    display: inline-flex;
+    column-gap: 15px;
+}
+
+.filters__series-label-span{
+    font-family: 'Futura New', cursive;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    font-size: 20px;
+}
+
+/*--------------------------------------------*/
+
+.filters__list{
+    margin-top: 20px;
+    margin-left: 30px;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.filters__list.hidden{
+    display: none;
+}
+
+.filters__718-label,
+.filters__911-label{
+    position: relative;
+
+    display: inline-flex;
+    column-gap: 10px;
+}
+
+.filters__718-label-span,
+.filters__911-label-span{
+    font-family: 'Futura New', cursive;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    font-size: 20px;
+}
+
+/*-------------Стилизаия радио кнопок---------*/
+/*--------------------------------------------*/
+
+.radio-series-box{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0)
+}
+
+.radio-custom-series-box{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid #666666;
+    margin-left: -35px;
+}
+
+.radio-series-box:checked + .radio-custom-series-box::before{
+    content: "";
+
+    width: 12px;
+    height: 12px;
+    background-color: #000000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.filters__series-label-span{
+    border-bottom: 3px solid transparent;
+    transition: 0.4s;
+}
+.radio-series-box:checked ~ .filters__series-label-span{
+    border-bottom-color: #000000;
+}
+/*--------------------------------------------*/
+
+.radio-911-custom-series-box{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+    border: 2px solid #666666;
+    margin-left: -35px;
+}
+
+.radio-series-box:checked + .radio-911-custom-series-box::before{
+    content: "";
+
+    background-color: #000000;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*--------------------------------------------*/
+
+.radio-718-custom-series-box{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #666666;
+    margin-left: -35px;
+}
+
+.radio-series-box:checked + .radio-718-custom-series-box::before{
+    content: "";
+
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+
+    background-color: #000000;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

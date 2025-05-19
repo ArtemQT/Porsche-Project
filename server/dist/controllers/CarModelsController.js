@@ -13,5 +13,14 @@ class CarModelsController {
             res.status(500).json(err);
         }
     }
+    static async getAllModels(req, res) {
+        try {
+            const carModels = await carModelsModel_1.CarModelsModel.getAllCarModels();
+            res.status(200).json(carModels);
+        }
+        catch (err) {
+            res.status(500).json(err);
+        }
+    }
 }
 exports.CarModelsController = CarModelsController;

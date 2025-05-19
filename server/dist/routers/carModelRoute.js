@@ -9,3 +9,4 @@ const carModelsController_1 = require("../controllers/carModelsController");
 exports.carModelsRouter = express_1.default.Router();
 exports.carModelsRouter.get('/911', carModelsController_1.CarModelsController.getCarModels);
 exports.carModelsRouter.get('/718', carModelsController_1.CarModelsController.getCarModels);
+exports.carModelsRouter.get('/allModels', carModelsController_1.CarModelsController.getAllModels);

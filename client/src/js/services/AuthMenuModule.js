@@ -36,9 +36,6 @@ export class AuthMenu{
         this.menuDivElement.innerHTML = isAuth ?
             `<ul class="header__dropdown-menu-list">
                 <li class="header__dropdown-menu-item">
-                    <a class="header__dropdown-menu-button" title="Профиль" data-js-btn-profile>Profile</a>
-                </li>
-                <li class="header__dropdown-menu-item">
                     <a class="header__dropdown-menu-button" title="Выйти из аккаунта" data-js-btn-logOut>Log Out</a>
                 </li>
             </ul>`
@@ -73,9 +70,8 @@ export class AuthMenu{
             console.log(body);
             if (response.ok){
                 localStorage.removeItem('token');
-                localStorage.removeItem('userID');
+                localStorage.removeItem('modelID');
             }
-            debugger;
             if (window.location.pathname.endsWith('modelReview.html') || (window.location.pathname.endsWith('basket.html'))) {
                 setTimeout(() => window.location.href = 'landing.html', 2000);
             }

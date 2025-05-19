@@ -42,8 +42,6 @@ server.listen(PORT, () => {
 });
 
 
-// server.use('/API/users', testRouter)
-
 
 
 

@@ -9,3 +9,4 @@ const usersBasketController_1 = require("../controllers/usersBasketController");
 exports.usersBasketRouter = express_1.default.Router();
 exports.usersBasketRouter.post('/addConfig', usersBasketController_1.usersBasketController.addConfig);
 exports.usersBasketRouter.get('/getUserConfig', usersBasketController_1.usersBasketController.getUserConfig);
+exports.usersBasketRouter.delete('/deleteUserConfig', usersBasketController_1.usersBasketController.deleteConfig);

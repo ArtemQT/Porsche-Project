@@ -83,4 +83,32 @@ export class usersBasketController{
             return;
         }
     }
+
+    static async deleteConfig(req: Request, res: Response){
+        try{
+            // Получение id пользователя через JWT токен
+            const token: string = req.headers.authorization!.split(" ")[1];
+            const decoded: any = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET!);
+            const user_id: number = decoded.user_id;
+
+            // Получение id конфигурации из query параметры
+            const config_id: number = parseInt(<string>req.query.id);
+
+            // Удаление конфигурации пользователя
+            await usersBasketModel.deleteConfigModel(config_id, user_id);
+
+            res.status(200).json({
+                message: `Configuration successfully deleted`,
+            })
+        }
+        catch(err: any){
+            res
+                .status(500)
+                .json({
+                    "statusCode": 500,
+                    "message" : `Server Error ${err.message}`,
+                })
+            return;
+        }
+    }
 }

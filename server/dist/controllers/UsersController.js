@@ -37,7 +37,6 @@ class AuthenticateUser {
             };
             const rows = await usersModel_1.UsersModel.createUserModel(userData);
             res.status(201).json({
-                "userID": rows.insertId,
                 "message": "User successfully created",
             });
         }
@@ -80,13 +79,12 @@ class AuthenticateUser {
             // saving in cookies JWT refresh
             res.cookie('jwt', refreshToken, {
                 httpOnly: true,
-                secure: false,
+                secure: true,
                 maxAge: 7 * 24 * 60 * 60 * 1000
             });
             console.log('jwt saved in cookies');
             await tokenModel_1.TokenModel.updateRefreshToken(refreshToken, user.id);
             res.status(200).json({
-                userID: user.id,
                 accessToken,
                 message: `Authorization successful\n Welcome ${user.user_name}`,
             });

@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
 
-    <script type="module" src="../src/js/basketModules/basketConfigSwiper.js" defer></script>
     <script type="module" src="../src/js/basketModules/basketModule.js" defer></script>
+    <script type="module" src="../src/js/basketModules/basketConfigSwiper.js" defer></script>
 
     <title>Porsche configurations</title>
 </head>
@@ -42,19 +42,13 @@
             </a>
 
             <div class="header__wrapper-actions">
-<!--                <nav class="header__nav">-->
-<!--                    <ul class="header__nav-list">-->
-<!--                        <li class="header__nav-item">-->
-<!--                            <a href="#models" class="header__nav-link">Models</a>-->
-<!--                        </li>-->
-<!--                        <li class="header__nav-item">-->
-<!--                            <a href="#Porsche_Finder" class="header__nav-link">Porsche Finder</a>-->
-<!--                        </li>-->
-<!--                        <li class="header__nav-item">-->
-<!--                            <a href="#footer" class="header__nav-link">Contact</a>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                </nav>-->
+                <nav class="header__nav">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item">
+                            <a href="#footer" class="header__nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
                 <ul class="header__list-icons">
                     <li class="header__list-icons-item">
                         <button class="header__user-button" title="Пользователь">
@@ -98,161 +92,381 @@
                     Personalized Porsche configurations
                 </h2>
             </header>
+        </section>
+    </main>
 
-            <div class="basket__container container">
-                <div class="basket__content">
-                    <ul class="basket__list">
-                        <li class="basket__list-item">
-                            <div class="basket__item-card-wrapper">
-                                <div class="basket-card__FuelType">
-                                    Petrol
-                                </div>
+    <footer id="footer" class="footer">
+        <div class="contacts__container container">
+            <h2 class="visually-hidden">Contacts information</h2>
 
-                                <div class="basket-card__img">
-                                    <img src="assetsModelOverview911/images/911-images/911CarreraGTS.avif" alt=""
-                                         width="300px"
-                                         height="150px">
-                                </div>
+            <div  class="contacts__wrapper">
+                <div class="contacts__findInfo-wrapper">
+                    <h3 class="contacts__findInfo-title contacts-title">
+                        Divisions and contact information
+                    </h3>
+                    <p class="contacts__findInfo-description">
+                        Do you have any questions?
+                    </p>
+                    <a href="https://www.porsche.com/central-eastern-europe/ru/locations-and-contact/" class="contacts__findInfo-link" target="_blank">
+                        Find contacts
+                    </a>
+                </div>
 
-                                <h3 class="basket-card-title">
-                                    911 Carrera GTS
-                                </h3>
-
-                                <ul class="basket-card__list-param">
-                                    <li class="basket-card__list-param-item">
-                                        <div class="basket-card__list-param-item-value">
-                                            3.9 s
-                                        </div>
-                                        <div class="basket-card__list-param-item-name">
-                                            Acceleration 0 - 100 km/h with Sport Chrono Package
-                                        </div>
-                                    </li>
-                                    <li class="basket-card__list-param-item">
-                                        <div class="basket-card__list-param-item-value">
-                                            398 kW / 541 PS
-                                        </div>
-                                        <div class="basket-card__list-param-item-name">
-                                            Power combined (kW) / Power combined (PS)
-                                        </div>
-                                    </li>
-                                    <li class="basket-card__list-param-item">
-                                        <div class="basket-card__list-param-item-value">
-                                            312 km/h
-                                        </div>
-                                        <div class="basket-card__list-param-item-name">
-                                            Top speed
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="basket__item-config-container">
-                                <div class="basket__config-title">
-                                    Your 911 Carrera GTS Configuration
-                                </div>
-                                <div class="basket__config-swiper swiper">
-                                    <div class="basket__config-swiper-wrapper swiper-wrapper">
-
-                                        <!--          Слайд с экстерьером             -->
-                                        <article class="basket-config__swiper-slide swiper-slide">
-                                            <h3 class="basket__swiper-slide-info-title swiper-slide-title">
-                                                Exterior Colour
-                                            </h3>
-                                            <figure class="color__swiper-slide-picture">
-                                                <img src="assetsModelReview/images/911/gt3/gt3-colors/gt3(deepblack).png"
-                                                     alt=""
-                                                     width="350"
-                                                     height="130"
-                                                >
-                                                <figcaption class="color__swiper-slide-picture-info swiper-slide-info">
-                                                    Deep Black
-                                                </figcaption>
-                                            </figure>
-                                        </article>
-
-                                        <!--          Слайд с интерьером          -->
-                                        <article class="basket-config__swiper-slide swiper-slide">
-                                            <h3 class="basket__swiper-slide-info-title">
-                                                Interior Colour
-                                            </h3>
-                                            <figure class="interior__swiper-slide-picture">
-                                                <img src="assetsModelReview/images/911/interior/standart-interior.jfif"
-                                                     alt=""
-                                                     width="400"
-                                                     height="180"
-                                                >
-                                                <figcaption class="interior__swiper-slide-picture-info swiper-slide-info">
-                                                    Standard interior
-                                                </figcaption>
-                                            </figure>
-                                        </article>
-
-                                        <!--          Слайд с дисками         -->
-                                        <article class="basket-config__swiper-slide swiper-slide">
-                                            <h3 class="basket__swiper-slide-info-title">
-                                                Wheels
-                                            </h3>
-                                            <figure class="wheels__swiper-slide-picture">
-                                                <img src="assetsModelReview/images/911/wheels/standart-wheels.png"
-                                                     alt=""
-                                                     width="120"
-                                                     height="120"
-                                                >
-                                                <figcaption class="wheels__swiper-slide-picture-info swiper-slide-info">
-                                                    Classic wheels
-                                                </figcaption>
-                                            </figure>
-                                        </article>
-
-                                        <!--          Слайд с пакетом             -->
-                                        <article class="basket-config__swiper-slide swiper-slide package__slide">
-                                            <h3 class="basket__swiper-slide-info-title">
-                                                Porsche package
-                                            </h3>
-
-                                            <div class="package__swiper-slide-info">
-                                                <h4 class="package__swiper-slide-info-title">
-                                                    Standard package
-                                                </h4>
-                                                <p class="package__swiper-slide-info-description">
-                                                    The car is in basic configuration, without additional sporty modifications.
-                                                    Suitable for everyday driving, provides balanced road behavior and comfort.
-                                                    An ideal choice for those who appreciate classics and practicality.
-                                                </p>
-                                            </div>
-                                        </article>
-
-                                        <!--          Слайд с выхлопом            -->
-                                        <article class="basket-config__swiper-slide swiper-slide exhaust__slide">
-                                            <h3 class="basket__swiper-slide-info-title">
-                                                Exhaust System
-                                            </h3>
-
-                                            <div class="exhaust__swiper-slide-info">
-                                                <h4 class="exhaust__swiper-slide-info-title">
-                                                    Standard Exhaust System
-                                                </h4>
-                                                <p class="exhaust__swiper-slide-info-description">
-                                                    Conventional factory exhaust system, balanced in sound and ecology.
-                                                    Provides a comfortable ride, not annoying in the city, suitable for everyday use.
-                                                    A practical choice for those who appreciate silence and economy.
-                                                </p>
-                                            </div>
-                                        </article>
-                                    </div>
-
-                                    <div class="basket__config-controls-button-prev swiper-button-prev">
-                                    </div>
-                                    <div class="basket__config-controls-button-next swiper-button-next">
-                                    </div>
-                                </div>
-                            </div>
-
+                <div class="contacts__social-media-wrapper">
+                    <h3 class="contacts__social-media-title contacts-title">
+                        Social media
+                    </h3>
+                    <p class="contacts__social-media-description">
+                        Connect with us through social media.
+                    </p>
+                    <ul class="contacts__social-media-list">
+                        <li class="contacts__social-media-list-item">
+                            <a href="https://www.instagram.com/porsche/" class="contacts__social-media-list-link" target="_blank">
+                                <img src="assetsMainPage/icons/social-media-icons/icon-instagram.svg"
+                                     alt=""
+                                     width="40"
+                                     height="40"
+                                >
+                            </a>
+                        </li>
+                        <li class="contacts__social-media-list-item">
+                            <a href="https://www.facebook.com/porsche/" class="contacts__social-media-list-link" target="_blank">
+                                <img src="assetsMainPage/icons/social-media-icons/icon-facebook.svg"
+                                     alt=""
+                                     width="40"
+                                     height="40"
+                                >
+                            </a>
+                        </li>
+                        <li class="contacts__social-media-list-item">
+                            <a href="https://www.pinterest.com/porsche/" class="contacts__social-media-list-link" target="_blank">
+                                <img src="assetsMainPage/icons/social-media-icons/icon-pinterest.svg"
+                                     alt=""
+                                     width="40"
+                                     height="40"
+                                >
+                            </a>
+                        </li>
+                        <li class="contacts__social-media-list-item">
+                            <a href="https://www.youtube.com/user/Porsche" class="contacts__social-media-list-link" target="_blank">
+                                <img src="assetsMainPage/icons/social-media-icons/icon-youtube.svg"
+                                     alt=""
+                                     width="40"
+                                     height="40"
+                                >
+                            </a>
+                        </li>
+                        <li class="contacts__social-media-list-item">
+                            <a href="https://x.com/Porsche" class="contacts__social-media-list-link" target="_blank">
+                                <img src="assetsMainPage/icons/social-media-icons/icon-xcom.svg"
+                                     alt=""
+                                     width="60"
+                                     height="60"
+                                >
+                            </a>
+                        </li>
+                        <li class="contacts__social-media-list-item">
+                            <a href="https://www.linkedin.com/company/porsche-ag/" class="contacts__social-media-list-link" target="_blank">
+                                <img src="assetsMainPage/icons/social-media-icons/icon-linkedin.svg"
+                                     alt=""
+                                     width="30"
+                                     height="30"
+                                >
+                            </a>
                         </li>
                     </ul>
                 </div>
             </div>
-        </section>
-    </main>
+
+            <div class="contacts__company-wrapper">
+                <h3 class="contacts__company-title contacts-title">
+                    Company
+                </h3>
+                <ul class="contacts__company-list">
+                    <li class="contacts__company-list-item">
+                        <a href="https://www.porsche.com/central-eastern-europe/ru/" class="contacts__company-list-link" target="_blank">
+                            Porsche Central and Eastern Europe
+                        </a>
+                        <a href="https://www.porsche.com/central-eastern-europe/ru/legal/compliance/" class="contacts__company-list-link" target="_blank">
+                            Compliance
+                        </a>
+                    </li>
+
+                    <li class="contacts__company-list-item">
+                        <a href="https://www.porsche.com/central-eastern-europe/ru/aboutporsche/jobs/" class="contacts__company-list-link" target="_blank">
+                            Vacancies
+                        </a>
+                        <a href="https://www.porsche.com/central-eastern-europe/ru/aboutporsche/responsibility/" class="contacts__company-list-link" target="_blank">
+                            Responsibility
+                        </a>
+                    </li>
+
+                    <li class="contacts__company-list-item">
+                        <a href="https://www.porsche.com/central-eastern-europe/ru/globalpartnershipcouncil" class="contacts__company-list-link" target="_blank">
+                            Global Partnership Council
+                        </a>
+                        <a href="https://www.porsche.com/central-eastern-europe/ru/legal/compliance/" class="contacts__company-list-link" target="_blank">
+                            News and press
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="contacts__company-rights-wrapper">
+                <p class="contacts__company-rights-description">
+                    © 2025 Porsche.com. All rights reserved.
+                </p>
+
+                <a href="#header" class="contacts__company-rights-logo">
+                    <img src="assetsMainPage/icons/porsche-white-logo.svg"
+                         alt="Логотип Porsche"
+                         class="header__logo-img"
+                         loading="lazy"
+                         width="160"
+                         height="10"
+                    >
+                </a>
+
+                <a href="#header" class="contacts__company-rights-upButton">
+                    <img src="assetsMainPage/icons/upButton.svg"
+                         alt=""
+                         class="header__logo-img"
+                         loading="lazy"
+                         width="20"
+                         height="20"
+                    >
+                </a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
+
+
+<!-- Макет для создания карточки конфигурации и карточки превью-->
+<!--<div class="basket__item-card-wrapper">-->
+<!--    <div class="basket-card__FuelType">-->
+<!--        Petrol-->
+<!--    </div>-->
+
+<!--    <div class="basket-card__img">-->
+<!--        <img src="assetsModelOverview911/images/911-images/911CarreraGTS.avif" alt=""-->
+<!--             width="300px"-->
+<!--             height="150px">-->
+<!--    </div>-->
+
+<!--    <h3 class="basket-card-title">-->
+<!--        911 Carrera GTS-->
+<!--    </h3>-->
+
+<!--    <ul class="basket-card__list-param">-->
+<!--        <li class="basket-card__list-param-item">-->
+<!--            <div class="basket-card__list-param-item-value">-->
+<!--                3.9 s-->
+<!--            </div>-->
+<!--            <div class="basket-card__list-param-item-name">-->
+<!--                Acceleration 0 - 100 km/h with Sport Chrono Package-->
+<!--            </div>-->
+<!--        </li>-->
+<!--        <li class="basket-card__list-param-item">-->
+<!--            <div class="basket-card__list-param-item-value">-->
+<!--                398 kW / 541 PS-->
+<!--            </div>-->
+<!--            <div class="basket-card__list-param-item-name">-->
+<!--                Power combined (kW) / Power combined (PS)-->
+<!--            </div>-->
+<!--        </li>-->
+<!--        <li class="basket-card__list-param-item">-->
+<!--            <div class="basket-card__list-param-item-value">-->
+<!--                312 km/h-->
+<!--            </div>-->
+<!--            <div class="basket-card__list-param-item-name">-->
+<!--                Top speed-->
+<!--            </div>-->
+<!--        </li>-->
+<!--    </ul>-->
+<!--</div>-->
+<!--<div class="basket__item-config-container">-->
+<!--    <div class="basket__config-title">-->
+<!--        Your 911 Carrera GTS Configuration-->
+<!--    </div>-->
+<!--    <div class="basket__config-swiper swiper">-->
+<!--        <div class="basket__config-swiper-wrapper swiper-wrapper">-->
+
+<!--            &lt;!&ndash;          Слайд с экстерьером             &ndash;&gt;-->
+<!--            <article class="basket-config__swiper-slide swiper-slide">-->
+<!--                <h3 class="basket__swiper-slide-info-title swiper-slide-title">-->
+<!--                    Exterior Colour-->
+<!--                </h3>-->
+<!--                <figure class="color__swiper-slide-picture">-->
+<!--                    <img src="assetsModelReview/images/911/gt3/gt3-colors/gt3(deepblack).png"-->
+<!--                         alt=""-->
+<!--                         width="350"-->
+<!--                         height="130"-->
+<!--                    >-->
+<!--                    <figcaption class="color__swiper-slide-picture-info swiper-slide-info">-->
+<!--                        Deep Black-->
+<!--                    </figcaption>-->
+<!--                </figure>-->
+<!--            </article>-->
+
+<!--            &lt;!&ndash;          Слайд с интерьером          &ndash;&gt;-->
+<!--            <article class="basket-config__swiper-slide swiper-slide">-->
+<!--                <h3 class="basket__swiper-slide-info-title">-->
+<!--                    Interior Colour-->
+<!--                </h3>-->
+<!--                <figure class="interior__swiper-slide-picture">-->
+<!--                    <img src="assetsModelReview/images/911/interior/standart-interior.jfif"-->
+<!--                         alt=""-->
+<!--                         width="400"-->
+<!--                         height="180"-->
+<!--                    >-->
+<!--                    <figcaption class="interior__swiper-slide-picture-info swiper-slide-info">-->
+<!--                        Standard interior-->
+<!--                    </figcaption>-->
+<!--                </figure>-->
+<!--            </article>-->
+
+<!--            &lt;!&ndash;          Слайд с дисками         &ndash;&gt;-->
+<!--            <article class="basket-config__swiper-slide swiper-slide">-->
+<!--                <h3 class="basket__swiper-slide-info-title">-->
+<!--                    Wheels-->
+<!--                </h3>-->
+<!--                <figure class="wheels__swiper-slide-picture">-->
+<!--                    <img src="assetsModelReview/images/911/wheels/standart-wheels.png"-->
+<!--                         alt=""-->
+<!--                         width="120"-->
+<!--                         height="120"-->
+<!--                    >-->
+<!--                    <figcaption class="wheels__swiper-slide-picture-info swiper-slide-info">-->
+<!--                        Classic wheels-->
+<!--                    </figcaption>-->
+<!--                </figure>-->
+<!--            </article>-->
+
+<!--            &lt;!&ndash;          Слайд с пакетом             &ndash;&gt;-->
+<!--            <article class="basket-config__swiper-slide swiper-slide package__slide">-->
+<!--                <h3 class="basket__swiper-slide-info-title">-->
+<!--                    Porsche package-->
+<!--                </h3>-->
+
+<!--                <div class="package__swiper-slide-info">-->
+<!--                    <h4 class="package__swiper-slide-info-title">-->
+<!--                        Standard package-->
+<!--                    </h4>-->
+<!--                    <p class="package__swiper-slide-info-description">-->
+<!--                        The car is in basic configuration, without additional sporty modifications.-->
+<!--                        Suitable for everyday driving, provides balanced road behavior and comfort.-->
+<!--                        An ideal choice for those who appreciate classics and practicality.-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </article>-->
+
+<!--            &lt;!&ndash;          Слайд с выхлопом            &ndash;&gt;-->
+<!--            <article class="basket-config__swiper-slide swiper-slide exhaust__slide">-->
+<!--                <h3 class="basket__swiper-slide-info-title">-->
+<!--                    Exhaust System-->
+<!--                </h3>-->
+
+<!--                <div class="exhaust__swiper-slide-info">-->
+<!--                    <h4 class="exhaust__swiper-slide-info-title">-->
+<!--                        Standard Exhaust System-->
+<!--                    </h4>-->
+<!--                    <p class="exhaust__swiper-slide-info-description">-->
+<!--                        Conventional factory exhaust system, balanced in sound and ecology.-->
+<!--                        Provides a comfortable ride, not annoying in the city, suitable for everyday use.-->
+<!--                        A practical choice for those who appreciate silence and economy.-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </article>-->
+<!--        </div>-->
+
+<!--        <div class="basket__config-controls-button-prev swiper-button-prev">-->
+<!--        </div>-->
+<!--        <div class="basket__config-controls-button-next swiper-button-next">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<div class="basket__item-info">-->
+<!--    <h3 class="basket__item-info-price-title">-->
+<!--        Hover your mouse to see the list of prices-->
+<!--    </h3>-->
+<!--    <div class="basket__item-info-price">-->
+<!--        <h4 class="basket__item-info-title">-->
+<!--            Price information-->
+<!--        </h4>-->
+<!--        <div class="basket__item-price">-->
+<!--            <ul class="basket__price-list">-->
+<!--                <li class="basket__price-list-item">-->
+<!--                    <div class="basket__base-price-info">-->
+<!--                        <div class="basket__base-price-title">-->
+<!--                            Base price-->
+<!--                        </div>-->
+<!--                        <div class="basket__base-price">-->
+<!--                            £ <strong><span class="base-price">0</span>.00</strong>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </li>-->
+<!--                <li class="basket__price-list-item">-->
+<!--                    <div class="basket__base-price-info">-->
+<!--                        <div class="basket__base-price-title">-->
+<!--                            Amount price of selected options-->
+<!--                        </div>-->
+<!--                        <div class="basket__base-price">-->
+<!--                            £ <strong><span class="options-price"></span>.00</strong>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--            <div class="basket__price-total">-->
+<!--                <div class="basket__total-price-title">-->
+<!--                    Total Price-->
+<!--                </div>-->
+<!--                <div class="basket__total-price">-->
+<!--                    £ <strong><span class="total-price"></span>.00</strong>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <button class="basket__item-delete-button">-->
+<!--        Delete Configuration-->
+<!--    </button>-->
+<!--</div>-->
+
+
+<!-- Макет для создания карточки summary-->
+<!--                                <li class="basket__summary-item">-->
+<!--                                    <div class="basket__summary-car">-->
+<!--                                        911 Porsche Carrera GTS-->
+<!--                                    </div>-->
+<!--                                    <div class="basket__summary-price">-->
+<!--                                        Total Price: <strong><span class="basket__summary-price-amount">199200.00</span>£</strong>-->
+<!--                                    </div>-->
+
+<!--                                    <button class="basket__summary-button">-->
+<!--                                        Configuration Details-->
+<!--                                        <img src="./assetsBasket/icons/options-icon.svg" alt=""-->
+<!--                                             width="25"-->
+<!--                                             height="25"-->
+<!--                                        >-->
+<!--                                    </button>-->
+
+<!--                                    <ul class="basket__summary-configuration-list hidden">-->
+<!--                                        <li class="basket__summary-configuration-list-item">-->
+<!--                                            Inferno Red Exterior-->
+<!--                                        </li>-->
+<!--                                        <li class="basket__summary-configuration-list-item">-->
+<!--                                            Platinum Grey Interior-->
+<!--                                        </li>-->
+<!--                                        <li class="basket__summary-configuration-list-item">-->
+<!--                                            Satin Aurum Wheels-->
+<!--                                        </li>-->
+<!--                                        <li class="basket__summary-configuration-list-item">-->
+<!--                                            Weissach package-->
+<!--                                        </li>-->
+<!--                                        <li class="basket__summary-configuration-list-item">-->
+<!--                                            Titan Perfomance Exhaust system-->
+<!--                                        </li>-->
+<!--                                    </ul>-->
+<!--                                </li>-->

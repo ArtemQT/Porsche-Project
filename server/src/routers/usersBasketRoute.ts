@@ -5,4 +5,6 @@ export const usersBasketRouter: Router = express.Router();
 
 usersBasketRouter.post('/addConfig' ,usersBasketController.addConfig);
 
-usersBasketRouter.get('/getUserConfig', usersBasketController.getUserConfig)
+usersBasketRouter.get('/getUserConfig', usersBasketController.getUserConfig);
+
+usersBasketRouter.delete('/deleteUserConfig', usersBasketController.deleteConfig);

@@ -8,26 +8,45 @@ new UsersBasket();
 
 
 class ModelOverview {
-    carModel;
-    modelList = document.querySelector('.modelRow__list')
-    modelTitle = document.querySelector('.modelRow-title');
-    carsData = null;
-
     constructor() {
         this.popUpMessage = new PopUpMessage();
+        this.modelList = document.querySelector('.modelRow__list');
+
+        this.modelList911 = null;
+        this.modelList718 = null
+
+        this.handleShowFiltersMenu();
+
         this.setHandlers();
     }
 
     async setHandlers(){
         document.addEventListener('DOMContentLoaded', async () => {
-            await this.innerCarModels()
+            this.allModels = await this.getAllModels()
+            this.modelList911 = this.allModels.filter((modelItem)=> modelItem.model_series === '911')
+            this.modelList718 = this.allModels.filter((modelItem)=> modelItem.model_series === '718')
+
+            // Модель из url
+            const model = this.getModelFromURL();
+
+            const inputBox = document.querySelector('.radio-series-box[value="' + model  + '"]');
+            inputBox.checked = true;
+
+            switch(model){
+                case '911': this.innerCarModels(this.modelList911); break;
+                case '718': this.innerCarModels(this.modelList718); break;
+            }
+
+            this.handleFiltersMenu();
+            this.handleSubFilters911Menu();
+            this.handleSubFilters718Menu();
+
         })
     }
 
-    async innerCarModels(){
-        this.carsData = await this.getCarModel()
-        this.carsData = this.carsData.sort((car1, car2) => car1.model_name.localeCompare(car2.model_name));
-        const modelListItems = this.carsData.map(car =>
+    innerCarModels(carsData){
+        carsData = carsData.sort((car1, car2) => car1.model_name.localeCompare(car2.model_name));
+        const modelListItems = carsData.map(car =>
             `
                 <li class="modelRow__list-item">
                         <div class="modelRow__list-item-FuelType">
@@ -79,37 +98,9 @@ class ModelOverview {
             `
         ).join('');
 
-        const modelNameData = `Porsche ${this.getModel()} Models`
-
-        this.modelTitle.innerHTML = modelNameData;
         this.modelList.innerHTML = modelListItems;
 
         this.handleReviewButton()
-    }
-
-    async getCarModel() {
-        this.carModel = this.getModel();
-        const url = "http://localhost:3000/API/carModels/" + this.carModel + `?model=${this.carModel}`;
-        try {
-            const response = await fetch(url, {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json",
-                }
-            });
-            if (response.ok) {
-                return await response.json();
-            }
-        }catch(err) {
-            console.log(err);
-            throw err;
-        }
-
-    }
-
-    getModel(){
-        const URLParams = new URLSearchParams(window.location.search);
-        return URLParams.get('model')
     }
 
     handleReviewButton(){
@@ -164,6 +155,118 @@ class ModelOverview {
             })
         })
     }
+
+    handleShowFiltersMenu = () => {
+        const filterItems = document.querySelectorAll('.filters__series-item');
+        const filterLists = document.querySelectorAll('.filters__list');
+
+        filterItems.forEach(filterItem => {
+            filterItem.addEventListener('click', (e) => {
+
+                filterLists.forEach(filterList => {
+                    filterList.classList.add('hidden');
+                });
+
+                const targetList = filterItem.querySelector('.filters__list');
+                if (targetList){
+                    targetList.classList.remove('hidden');
+
+                    const subFilterInputs = targetList.querySelectorAll('input');
+                    subFilterInputs.forEach((filterInput) => {filterInput.checked = false})
+                    subFilterInputs[0].checked = true;
+                }
+            })
+        })
+
+    }
+
+    handleSubFilters911Menu = () => {
+        const subFilterItems = document.querySelectorAll('.filters__911-item');
+        subFilterItems.forEach(filterItem => {
+            filterItem.addEventListener('click', (e) => {
+
+                e.stopPropagation();
+
+                const inputBox = filterItem.querySelector('.radio-series-box');
+                const inputBoxValue = inputBox.getAttribute('value');
+
+                if (inputBoxValue === 'all') {
+                    this.innerCarModels(this.modelList911);
+                }
+                else{
+                    const filteredList = this.modelList911.filter((item) => item.model_name.includes(inputBoxValue));
+                    this.innerCarModels(filteredList);
+                }
+            })
+        })
+    }
+    handleSubFilters718Menu = () => {
+        const subFilterItems = document.querySelectorAll('.filters__718-item');
+        subFilterItems.forEach(filterItem => {
+            filterItem.addEventListener('click', (e) => {
+
+                e.stopPropagation();
+
+                const inputBox = filterItem.querySelector('.radio-series-box');
+                const inputBoxValue = inputBox.getAttribute('value');
+
+                if (inputBoxValue === 'all') {
+                    this.innerCarModels(this.modelList718);
+                }
+                else{
+                    const filteredList = this.modelList718.filter((item) => item.model_name.includes(inputBoxValue));
+                    this.innerCarModels(filteredList);
+                }
+            })
+        })
+    }
+
+    handleFiltersMenu(){
+        // Выбор элементов списка со всеми фильтрами
+        const filtersSeriesLiEl = document.querySelectorAll('.filters__series-item');
+
+        filtersSeriesLiEl.forEach((filtersItem) => {
+            filtersItem.addEventListener('click', (e) => {
+                const filterInputEl = filtersItem.querySelector('.radio-series-box');
+                if (!filterInputEl.checked) {
+                    const filterValue = filterInputEl.value;
+
+                    if (filterValue === 'all') {
+                        this.innerCarModels(this.allModels)
+                    }
+                    else{
+                        const filteredCarModel = this.allModels.filter(carModel => carModel.model_series === filterValue);
+                        this.innerCarModels(filteredCarModel)
+                    }
+                }
+
+            })
+        })
+    }
+
+    getAllModels = async () => {
+        const url = "http://localhost:3000/API/carModels/allModels";
+        try {
+            const response = await fetch(url, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                }
+            });
+            if (response.ok) {
+                return await response.json();
+            }
+        }catch(err) {
+            console.log(err);
+            throw err;
+        }
+    }
+
+    getModelFromURL(){
+        const URLParams = new URLSearchParams(window.location.search);
+        return URLParams.get('model')
+    }
+
 
 }
 new ModelOverview();

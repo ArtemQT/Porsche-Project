@@ -33,4 +33,3 @@ server.use('/API/userBasket', usersBasketRoute_1.usersBasketRouter);
 server.listen(PORT, () => {
     console.log(`server listening on port ${PORT}`);
 });
-// server.use('/API/users', testRouter)
